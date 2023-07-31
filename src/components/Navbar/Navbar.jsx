@@ -9,7 +9,7 @@ return (
     <NavbarContainer>
         <div>
             <a href="/#">
-                <img src="./src/assets/Logo.png" alt="Logo" width={110} height={90}/>
+                <img src="./entrega1/src/assets/Logo.png" alt="Logo" width={110} height={90}/>
             </a>
         </div>
         <LinksContainer>

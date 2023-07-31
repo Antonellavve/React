@@ -12,7 +12,7 @@ const Hero = () => {
             </Button> */}
         </HeroContainer>
         <HeroImg>
-            <img src="./src/assets/img.hero.webp" alt="ImgHero" />
+            <img src="./src/assets/img.hero.png" alt="ImgHero" />
         </HeroImg>
         </>
     )
