@@ -1,28 +1,43 @@
 import styled from "styled-components";
 
 export const CategoriesContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	gap: 10px;
-	user-select: none;
-	margin: 2rem;
+display: flex;
+justify-content: center;
+gap: 10px;
+margin:0, 1.5rem;
+@media (max-width: 768px) {
+	flex-direction: column;
+}
 `;
 
-export const CardCategory = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: ${({ selected }) =>
-		selected ? "var(--orange-bg)" : "var(--gray-bg)"};
-	border-radius: 15px;
-	cursor: pointer;
-		img {
-			width:450px;
-			padding-top: 7px;
-			padding-bottom: 7px;
-		}
+export const CardCategory = styled(CategoriesContainer)`
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+padding: 10px;
+`;
+
+export const StyledCategoriesContainer1 = styled(CategoriesContainer)`
+  /* Estilos para el primer contenedor */
+    img {
+	width: 600px;
+	border-radius: 10px;
+	@media (max-width: 768px) {
+		width: 450px;
+	}
+	@media (max-width: 320px) {
+		width: 300px;
+	}
+    }
+`;
+
+export const StyledCategoriesContainer2 = styled(CategoriesContainer)`
+    img {
+	width: 450px;
+	border-radius:10px;
+	@media (max-width: 320px) {
+		width: 300px;
+	}
 	}
 `;
