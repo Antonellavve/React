@@ -8,7 +8,7 @@ const Navbar = () => {
 const [menuOpen, setMenuOpen] = useState(false);
 
 const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(prevState => !prevState);
 };
 
 return (
@@ -18,13 +18,13 @@ return (
             <img src={Logo} alt="Logo" width={110} height={90} />
             </a>
         </div>
-        <LinksContainer isOpen={menuOpen}>
+        <LinksContainer isOpenCustom={menuOpen}>
             <a href="#">HOME</a>
             <a href="#">CATEGORIAS</a>
             <a href="#">SALE</a>
-            <FaRegUser />
+            <FaRegUser size={20} />
         </LinksContainer>
-        <MenuStyled onClick={handleMenuClick}>
+        <MenuStyled isOpenCustom={menuOpen} onClick={handleMenuClick} >
             <BiMenuAltRight />
         </MenuStyled>
     </NavbarContainer>

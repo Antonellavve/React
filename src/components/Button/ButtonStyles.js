@@ -5,10 +5,10 @@ export const StyledButton = styled.div`
 	outline: none;
 	border: none;
 	border-radius: ${({ radius }) => `${radius}px`};
-	background: #A239CA;
-	color: white;
+	background: #bfff00;
+	color: black;
 	text-transform: uppercase;
-	font-weight: 400;
+	font-weight: 700;
 	cursor: pointer;
 	&:hover {
 		opacity: 95%;

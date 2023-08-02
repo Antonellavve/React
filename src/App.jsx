@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout"
 import Hero from "./components/Hero/Hero"
 import Categories from "./components/Categories/Categories"
 import Footer from "./components/Footer/Footer"
+import Cards from "./components/Cards/Cards"
 
 
 
@@ -13,6 +14,7 @@ function App() {
       <Layout>
         <Hero/>
         <Categories/>
+        <Cards/>
       </Layout>
       <Footer/>
     </>
