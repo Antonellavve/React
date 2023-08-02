@@ -10,6 +10,7 @@ export const HeroContainer = styled.section`
     h1 {
         margin-bottom: 2rem;
         font-size: 80px;
+        color: #C0C0C0;
     }
     @media (max-width: 1000px) {
         flex-direction: column;

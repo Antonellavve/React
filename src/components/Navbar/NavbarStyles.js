@@ -4,13 +4,17 @@ import styled from "styled-components";
 export const NavbarContainer = styled.header`
   /* Estilos del contenedor de la barra de navegación */
   height: 80px;
+  width: auto;
   background-color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  @media (max-width: 768px) {
+    width: auto;
+  }
   @media (max-width: 320px) {
-    width: 100%;
+    width: auto;
   }
 `;
 
@@ -31,22 +35,28 @@ background-color: #000000;
 color: #c0c0c0;
 padding: 1rem;
 z-index: 1; /* Asegurarse de que esté por encima del contenido */
+
 @media (max-width: 768px){
 display: ${props => (props.isOpenCustom ? "flex" : "none")};
-flex-direction: column;
+flex-direction: row;
 position: absolute; /* Posición absoluta para que esté debajo del Navbar */
 top: 100px; /* Altura del Navbar para que esté debajo de él */
 right: 0; /* Alinear a la derecha del Navbar */
+width: auto;
+gap: 50px;
+border-radius: 10px;
 }
 @media (max-width: 320px){
-  flex-direction: column;
-  right: -30px;
+  flex-direction: row;
+  right: 0;
+  gap: 0;
+  font-size: 10.5px;
 }
 
 a {
     padding: 1rem 1.5rem;
     font-weight: 700;
-    color: #c0c0c0;
+    color: #C0C0C0;
 }
 
 a:first-child {
@@ -65,7 +75,6 @@ export const MenuStyled = styled.div`
 display: none;
 font-size: 2rem;
 cursor: pointer;
-margin-right: 2rem;
 
 @media (max-width: 768px) {
     display: ${props => (props.isOpen ? "none" : "flex")};

@@ -1,10 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-    :root {
-        --btn-gradient: linear-gradient(83deg, #ffa100, #fb103d);
-        --btn-gradient-secondary: linear-gradient(140deg, #3B3022, #3B2329);
-    }
     html{
     scroll-behavior: smooth;
     }
@@ -14,8 +10,8 @@ export const GlobalStyles = createGlobalStyle`
     background: #111111;
     font-family: 'Raleway';
     color: #E5E4E2;
-    -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden
+    overflow-X: hidden;
+    width: auto;
     }
     a {
     text-decoration: none;
