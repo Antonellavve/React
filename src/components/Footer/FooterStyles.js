@@ -65,8 +65,10 @@ gap: 30px;
 flex-direction: row;
 padding: 10px;
 align-items: center;
-border: 2px solid gray;
 border-radius: 5px;
+h3{
+    border-bottom: 3px groove #bfff00;
+}
 
 @media (max-width: 320px) {
     gap: 5px;
@@ -74,3 +76,11 @@ border-radius: 5px;
     font-size: 15px;
 }
 `
+export const HoverableIcon = styled.div`
+display: flex;
+cursor: pointer;
+
+&:hover {
+    color: #bfff00; /* Cambia el color del ícono al pasar el cursor */
+}
+`;
