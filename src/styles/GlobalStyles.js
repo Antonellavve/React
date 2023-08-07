@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     background: #111111;
     font-family: 'Raleway';
-    color: #E5E4E2;
+    color: #C0C0C0;
     overflow-X: hidden;
     width: auto;
     }
@@ -23,4 +23,5 @@ export const GlobalStyles = createGlobalStyle`
     li {
     list-style: none;
     }
+    
 `;

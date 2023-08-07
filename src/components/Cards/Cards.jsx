@@ -1,21 +1,21 @@
-import React from 'react'
-import { CardProducts, CardsContainer, CardsWrapper } from './CardsStyles'
-import { cards } from '../../data/cards'
-import Card from './Card'
+import React from 'react';
+import Carousel from './Carousel';
+import { cards } from '../../data/cards';
+import Card from './Card';
 
 const Cards = () => {
-    return (
-    <CardsWrapper>
-        <h2>Productos Destacados</h2>
-        <CardsContainer>
-            {
-                cards.map ((clothes) =>{
-                    return <Card key={clothes.id} {...clothes}/>
-                })
-            }
-        </CardsContainer>
-    </CardsWrapper>
-    )
-}
+  const groupSize = 5;
+  const groupedCards = [];
+  for (let i = 0; i < cards.length; i += groupSize) {
+    groupedCards.push(cards.slice(i, i + groupSize));
+  }
 
-export default Cards
+  return (
+    <>
+      <h2>Productos Destacados</h2>
+    <Carousel images={groupedCards} groupSize={groupSize} />
+    </>
+  );
+};
+
+export default Cards;

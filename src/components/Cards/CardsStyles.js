@@ -6,10 +6,9 @@ flex-direction: column;
 width: 100%;
 
 h2{
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     margin-top: 50px;
-    color: #c0c0c0;
 }
 
 @media (max-width: 768px) {
@@ -33,13 +32,13 @@ display: flex;
 flex-direction: column;
 border: solid 3px gray;
 border-radius: 10px;
-width: 280px;
+width: 250px;
 height: 480px;
 align-items: center;
 margin: 10px;
 padding: 5px;
 img{
-    width: auto;
+    width: 230px;
     height: 300px;
     border-radius: 15px;
     padding-top: 20px;
@@ -55,5 +54,7 @@ span{
     font-size: 25px;
     font-weight: 700;
     margin: 10px;
+    color: white;
 }
 `;
+

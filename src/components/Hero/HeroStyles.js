@@ -4,9 +4,10 @@ export const HeroContainer = styled.section`
 display: flex;
 justify-content: center;
 align-items: center;
-max-width: 1300px;
-margin: 0 auto;
+max-width: 1000px;
+margin: 0;
 gap: 30px;
+
 .glitch {
     font-size: 8rem;
     font-weight: 700;
@@ -16,6 +17,9 @@ gap: 30px;
         -0.025em -0.05em 0 white,
         0.025em 0.05em 0 #BFFF00;
     animation: glitch 2500ms infinite;
+    @media (max-width: 320px) {
+    font-size: 5rem;
+}
 }
 
     .glitch span {

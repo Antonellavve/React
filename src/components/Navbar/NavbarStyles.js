@@ -31,8 +31,6 @@ flex-direction: row;
 align-items: center;
 gap: 10px;
 font-size: 15px;
-background-color: #000000;
-color: #c0c0c0;
 padding: 1rem;
 z-index: 1; /* Asegurarse de que esté por encima del contenido */
 
