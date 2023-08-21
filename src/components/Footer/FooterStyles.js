@@ -3,15 +3,15 @@ import styled  from "styled-components"
 export const FooterContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: auto;
-height: 270px;
+width: 100%;
+height: auto;
 justify-content: center;
-font-size:20px;
-gap: 20px;
-color: #C0C0C0;
+text-align: center;
 align-items: center;
+font-size:20px;
+color: #C0C0C0;
 background-color: #1C1C1C;
-margin-top: 20px;
+margin-top: 45px;
 
     span{
         font-size: 22px;
@@ -24,23 +24,20 @@ margin-top: 20px;
             font-size: 18px;
         }
     }
-    @media (max-width: 768px) {
-        width: 100%;
-        gap: 0;
-    }
-    @media (max-width: 320px) {
+
+    @media (max-width: 546) and (min-width: 320px) {
         display: block;
         text-align: center;
         font-size: 15px;
         width: auto;
-        height: 300px;
 }
 `
 export const FooterNewsletter = styled.div`
 left: 10%;
 display: flex;
 align-items: center;
-gap: 20px;
+gap: 10px;
+margin-top: 20px;
 input{
     width: 250px;
 }
@@ -54,18 +51,21 @@ button{
 span{
     border-right: none;
 }
-@media (max-width:768px) {
+@media (min-width:768px) and (max-width: 1000px){
     flex-direction: column;
     gap: 0;
+}
+@media (max-width: 768px) and (min-width: 320px) {
+    flex-direction: column;
 }
 `
 export const Icons = styled.div`
 display: flex;
-gap: 30px;
+gap: 20px;
 flex-direction: row;
-padding: 10px;
 align-items: center;
 border-radius: 5px;
+
 h3{
     border-bottom: 3px groove #bfff00;
 }

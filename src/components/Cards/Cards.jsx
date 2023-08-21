@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from './Carousel';
 import { cards } from '../../data/cards';
-import Card from './Card';
+import { CardsWrapper } from './CardsStyles';
 
 const Cards = () => {
   const groupSize = 5;
@@ -11,10 +11,10 @@ const Cards = () => {
   }
 
   return (
-    <>
+    <CardsWrapper>
       <h2>Productos Destacados</h2>
-    <Carousel images={groupedCards} groupSize={groupSize} />
-    </>
+      <Carousel images={groupedCards} groupSize={groupSize} />
+    </CardsWrapper>
   );
 };
 

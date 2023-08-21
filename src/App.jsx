@@ -1,22 +1,12 @@
-import Navbar from "./components/Navbar/Navbar"
-import Layout from "./components/Layout/Layout"
-import Hero from "./components/Hero/Hero"
-import Categories from "./components/Categories/Categories"
-import Footer from "./components/Footer/Footer"
-import Cards from "./components/Cards/Cards"
-
+import Routes from "./routes/Routes";
+import {GlobalStyles} from './styles/GlobalStyles';
 
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <Layout>
-        <Hero/>
-        <Categories/>
-        <Cards/>
-      </Layout>
-      <Footer/>
+      <Routes/>
+      <GlobalStyles/>
     </>
   )
 }

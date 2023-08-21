@@ -15,7 +15,7 @@ const Footer = () => {
                 </form>
                 </FooterNewsletter>
                 <Icons>
-                    <h3>Seguinos en nuestras redes</h3>
+                    <h3>FOLLOW US</h3>
                     <HoverableIcon>
                         <BsInstagram fontSize={30}/>
                     </HoverableIcon>

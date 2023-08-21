@@ -1,12 +1,18 @@
 import React from 'react'
-import { LayoutWrapper } from './LayoutStyles'
+import { LayoutWrapper, ContentContainerStyled } from './LayoutStyles'
+import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer/Footer'
 
 const Layout = ({children}) => {
     return (
         <LayoutWrapper>
-            {children}
+            <Navbar/>
+            <ContentContainerStyled>
+                {children}
+            </ContentContainerStyled>
+            <Footer/>
         </LayoutWrapper>
-    )
+    );
 }
 
-export default Layout
+export default Layout;

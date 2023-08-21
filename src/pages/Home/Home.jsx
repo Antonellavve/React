@@ -1,8 +1,10 @@
 import React from 'react'
-import { HeroContainer, HeroImg } from './HeroStyles'
-import Button from '../Button/Button'
+import { HeroContainer, HeroImg } from './HomeStyles'
+import Categories from '../../components/Categories/Categories'
+import Cards from '../../components/Cards/Cards'
 
-const Hero = () => {
+
+const Home = () => {
     return (
         <>
         <HeroContainer>
@@ -16,8 +18,10 @@ const Hero = () => {
         <HeroImg>
             <img src="https://d28hi93gr697ol.cloudfront.net/d1f4550f-4906-4a3d/modulos/1400x600-bann1-6449784267521.webp" alt="ImgHero" />
         </HeroImg>
+        <Categories/>
+        <Cards/>
         </>
     )
 }
 
-export default Hero
+export default Home

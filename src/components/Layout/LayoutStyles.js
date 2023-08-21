@@ -7,3 +7,7 @@ export const LayoutWrapper = styled.main`
 	flex-direction: column;
 	align-items: center;
 `
+
+export const ContentContainerStyled = styled.div`
+    height: auto;
+`;

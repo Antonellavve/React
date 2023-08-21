@@ -11,14 +11,13 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Raleway';
     color: #C0C0C0;
     overflow-X: hidden;
-    width: auto;
     }
     a {
     text-decoration: none;
     color: #C0C0C0;
     }
     a:visited {
-    color: white;
+    color: #C0C0C0;
     }
     li {
     list-style: none;
