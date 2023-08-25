@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from "../../assets/Logo.png";
 import { LinksContainer, MenuStyled, NavLinkStyled, NavbarContainer } from './NavbarStyles';
 import {useContext} from "react"
-import { Contexto } from './MenuContext';
+import {Contexto} from './MenuContext';
 
 import { FaRegUser } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
@@ -24,7 +24,7 @@ const Navbar = () => {
             <NavLinkStyled to='/aboutUs'>Sobre Nosotros</NavLinkStyled>
             <FaRegUser size={20} />
         </LinksContainer>
-        <MenuStyled icon onClick={() => dispatch({ type: "openMenu" })}>
+        <MenuStyled onClick={() => dispatch({ type: "openMenu" })}>
             <BiMenuAltRight />
         </MenuStyled>
     </NavbarContainer>

@@ -24,6 +24,9 @@ z-index: 1; /* Asegurarse de que esté por encima del contenido */
 background-color: black;
 height: 5%;
 color: #C0C0C0 !important;
+&.open{
+  display: flex;
+}
 
 
 @media (max-width: 768px) and (min-width: 547px) {
