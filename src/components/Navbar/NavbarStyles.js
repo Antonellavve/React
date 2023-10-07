@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import {motion} from "framer-motion"
 
 export const NavbarContainer = styled.header`
   /* Estilos del contenedor de la barra de navegación */
@@ -9,8 +10,27 @@ export const NavbarContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 ` ;
+
+export const ContainerNavbar = styled.div`
+  display: flex;
+  margin: 3%;
+`
+
+export const ModalOverlay = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: calc(100vw - 450px);
+  height: 100vh;
+
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      backdrop-filter: blur(4px);
+    `}
+`;
 
 export const LinksContainer = styled.div`
 /* Estilos del contenedor de los enlaces */
@@ -22,33 +42,27 @@ font-size: 15px;
 padding: 1.5rem;
 z-index: 1; /* Asegurarse de que esté por encima del contenido */
 background-color: black;
-height: 5%;
 color: #C0C0C0 !important;
+width: 80%;
+right: 5%;
+border-radius: 0 0 50px 50px ;
+
 &.open{
   display: flex;
+  flex-direction: column;
 }
-
 
 @media (max-width: 768px) and (min-width: 547px) {
 display: ${props => (props.isOpenCustom ? "flex" : "none")};
-flex-direction: row;
 position: absolute; /* Posición absoluta para que esté debajo del Navbar */
 top: 13%; /* Altura del Navbar para que esté debajo de él */
-right: 8%; /* Alinear a la derecha del Navbar */
 gap: 5%;
-border-radius: 10px;
-width: 65%;
-height: auto;
 }
 @media (max-width: 546px) and (min-width: 320px){
   display: ${props => (props.isOpenCustom ? "flex" : "none")};
-  flex-direction: column;
   gap: 0;
   font-size: 10.5px;
   margin-top: 250px;
-  height: auto;
-  width: 100%;
-  border-radius: 10px;
 }
 
 a {
@@ -73,7 +87,7 @@ export const MenuStyled = styled.div`
 display: none;
 font-size: 2rem;
 cursor: pointer;
-margin-right: 40px;
+margin: 10px;
 
 @media (max-width: 768px) and (min-width: 320px) {
     display: ${props => (props.isOpen ? "none" : "flex")};
@@ -86,3 +100,41 @@ export const NavLinkStyled = styled(NavLink)`
 }
 `
 
+export const CartAndUser = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    gap: 10px;
+`;
+
+
+export const CartContainer = styled.div`
+cursor: pointer;
+
+span{
+  position: absolute;
+  text-align: center;
+  height: 16px;
+  width: 16px;
+
+  border-radius: 1rem;
+  border: 1px solid white;
+  color: white;
+  background-color: red;
+  font-size: 0.8rem;
+}`;
+
+export const InvisibleScreen = styled.div`
+    z-index: 40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(420px - 100vh);
+
+    ${({ isClosed }) =>
+    !isClosed &&
+    css`
+      background-color: none;
+    `}
+`;

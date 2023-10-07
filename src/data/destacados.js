@@ -1,4 +1,4 @@
-export const cards = [
+export const recomendados = [
     {
         id: 1,
         title: "Buzo Ari",

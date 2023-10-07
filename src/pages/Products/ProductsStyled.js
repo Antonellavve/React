@@ -22,7 +22,7 @@ border-radius: 10px;
 width: 250px;
 height: 480px;
 align-items: center;
-margin: 0 10px;
+margin: 10px;
 padding: 5px;
 
 img{
@@ -45,3 +45,25 @@ span{
     color: white;
 }
 `
+export const ProductosCard = styled.div`
+    background: var(--gray-bg);
+    width: 300px;
+    border-radius: 15px;
+    padding: 1rem;
+img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+h2 {
+    font-weight: 600;
+    margin: 0;
+}
+p {
+    color: #666;
+    font-size: 1.2rem;
+}
+`;
+
+export const PriceContainer = styled.div``
+
+export const CardPrice = styled.div``

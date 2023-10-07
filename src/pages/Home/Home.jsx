@@ -1,8 +1,7 @@
 import React from 'react'
 import { HeroContainer, HeroImg } from './HomeStyles'
 import Categories from '../../components/Categories/Categories'
-import Cards from '../../components/Cards/Cards'
-
+import Cards from '../../components/Cards/CardsDestacados'
 
 const Home = () => {
     return (

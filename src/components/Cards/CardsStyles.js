@@ -1,30 +1,33 @@
 import styled from "styled-components";
+export const CardsTitle = styled.div`
+display: flex;
+flex-direction: row;
+margin: 3%;
+gap: 40px;
+h3{
+    font-size: 30px;
+}
+
+a{
+    display: flex;
+    text-decoration: underline;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+}
+`
 
 export const CardsWrapper = styled.section`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 width: 100%;
-
-h2{
-    font-size: 50px;
-    text-align: center;
-    margin-top: 50px;
-}
-
+align-items: center;
+margin-left: 5%;
 @media (max-width: 768px) {
     display: flex;
 }
-`;
-
-export const CardsContainer = styled.div`
-display: flex;
-border-radius:10px;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-gap: 10px;
-flex-wrap: wrap;
-width: 100%;
 `;
 
 export const CardProducts = styled.div`
@@ -35,8 +38,7 @@ border-radius: 10px;
 width: 250px;
 height: 480px;
 align-items: center;
-margin: 10px;
-padding: 5px;
+margin:10px;
 img{
     width: 230px;
     height: 300px;
@@ -44,7 +46,7 @@ img{
     padding-top: 20px;
 }
 
-h2{
+h3{
     font-size: 25px;
     font-weight: 600;
     margin-top: 10px;

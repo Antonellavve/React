@@ -1,6 +1,6 @@
 import React from 'react'
 import {ContainerContact, ContainerForm, ContactUs} from './ContactStyles'
-import Button from '../../components/Button/Button'
+import Button from '../../components/UI/Button/Button'
 
 const Contact = () => {
     const StyleText={
@@ -22,11 +22,13 @@ return (
         <ContainerForm>
             <h4>O completa el siguiente formulario y un asesor se pondra en contacto</h4>
             <form>
-                <label htmlFor="nombre">Nombre completo</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input type="text" placeholder="Escribe tu nombre" id='nombre' />
+                <label htmlFor="apellido">Apellido</label>
+                <input type="text" placeholder="Escribe tu apellido" id='apellido' />
                 <label htmlFor="email">Correo Electrónico</label>
                 <input type="email" id='email' placeholder='Escribe tu correo'/>
-                <label htmlFor="comentario">Comentarios</label>
+                <label htmlFor="Asunto">Asunto</label>
                 <textarea rows="5" cols="45" placeholder='Escribe tu comentario'></textarea>
             </form>
             <Button>Enviar</Button>

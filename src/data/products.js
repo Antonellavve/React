@@ -175,3 +175,13 @@ export const productsList = [
         category: "RemeronesYVestidos"
     },
 ];
+
+export const totalProducts = productsList.length;
+
+export const Products = productsList.reduce ((acc, product) => {
+    if (!acc[product.category]){
+        acc[product.category]=[];
+    }
+    acc [product.category]=[...acc [product.category], product];
+    return acc;
+}, {});
