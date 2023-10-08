@@ -8,7 +8,7 @@ import productsReducer from "./Products/productsSlice";
 import destacadosReducer from "./Destacados/destacadosSlice";
 import cartReducer from "./Cart/cartSlice"
 import userReducer from "./User/userSlice"
-import ordersReducer from "./orders/ordersSlice"
+import ordersReducer from "./Orders/ordersSlice"
 
 const reducers = combineReducers ({
     categories : categoriesReducer,
