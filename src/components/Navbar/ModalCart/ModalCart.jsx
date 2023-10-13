@@ -8,7 +8,8 @@ import { ContainerPrice, ModalContainer, Divider, ProductsWrapperStyled, TotalPr
 import { formatPrice } from "../../../utils/formatPrice";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import ReactModal from 'react-modal'; 
+import Modal from 'react-modal';
+
 
 const ModalCart = () => {
   const navigate = useNavigate();
