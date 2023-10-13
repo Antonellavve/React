@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleHiddenCart, clearCart } from "../../../Redux/Cart/cartSlice";
 import Submit from "../../UI/Submit/Submit";
-import { EfectOfCart } from "../NavbarStyles";
+import { EfectOfCart} from "../NavbarStyles";
 import ModalCartCard from "./ModalCartCard";
 import { ContainerPrice, ModalContainer, Divider, ProductsWrapperStyled, TotalPriceContainer, TheSubtotal, TitleStyled, Shipping } from "./ModalCartStyles";
 import { formatPrice } from "../../../utils/formatPrice";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import Modal from 'react-modal';
-
+import ReactModal from 'react-modal'; 
 
 const ModalCart = () => {
   const navigate = useNavigate();
