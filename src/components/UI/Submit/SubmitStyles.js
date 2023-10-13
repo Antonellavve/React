@@ -11,7 +11,7 @@ export const ButtonSubmitStyled = styled(motion.button)`
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 15px;
+    margin: 15px;
 
     &:disabled {
         cursor: not-allowed;

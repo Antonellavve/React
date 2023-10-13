@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyledCategoriesContainer1, StyledCategoriesContainer2} from "./CategoriesStyles"
+import {CategoriesContainer, StyledCategoriesContainer1, StyledCategoriesContainer2} from "./CategoriesStyles"
 // import { categories } from '../../data/categories'
 import Category from './Category'
 import { useSelector } from 'react-redux';

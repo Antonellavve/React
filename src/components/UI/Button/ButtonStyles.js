@@ -20,7 +20,7 @@ export const StyledButton = styled.div`
         color: #999; 
     }
 `;
-export const ButtonContainer= styled.div`
+export const ButtonContainer = styled.div`
     display: flex;
     justify-content: center;
     gap: 20px;

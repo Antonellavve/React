@@ -2,21 +2,21 @@ import styled from 'styled-components';
 
 export const ProductosContainerStyled = styled.div`
     width: 40%;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
-export const ProductsTitleStyled = styled.h2`
-    font-weight: 500;
-    font-size: 22px;
-`;
-
-export const CardsWrapperStyled = styled.div`
+export const CardsWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 25px;
-
-    width: 80%;
-    height: 440px;
+    text-align: center;
+    gap: 1.2rem;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
 
     overflow: scroll;
@@ -26,21 +26,8 @@ export const CardsWrapperStyled = styled.div`
         width: 6px;
     }
 
-    &::-webkit-scrollbar-thumb {
-        background: var(--gray-bg);
-        border-radius: 5px;
-    }
-
     &::-webkit-scrollbar:horizontal {
         display: none;
-    }
-
-    @media (max-height: 800px) {
-        height: 270px;
-    }
-
-    @media (max-width: 1500px) {
-        width: 100%;
     }
 `;
 
@@ -61,7 +48,23 @@ export const SubtotalStyled = styled.div`
 
 export const EnvioStyled = styled(SubtotalStyled)``;
 
-export const TotalStyled = styled(SubtotalStyled)``;
+export const TotalStyled = styled(SubtotalStyled)`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    & span {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #fff;
+    }
+`;
 
 export const PriceTotalStyled = styled.span`
     color: #ff7a00;

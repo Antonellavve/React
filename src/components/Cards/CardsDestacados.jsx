@@ -11,7 +11,8 @@ const Card = () => {
       <CardsTitle>
           <h3>Productos Destacados</h3>
           <a href='/products'>Ver más</a>
-        </CardsTitle>
+      </CardsTitle>
+      
       <CardsWrapper>
 
       {destacados.map((producto) => (

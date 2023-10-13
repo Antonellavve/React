@@ -5,4 +5,5 @@ export const ContainerCheckout= styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 2rem 5rem;
+    margin-top: 8rem;
 `;

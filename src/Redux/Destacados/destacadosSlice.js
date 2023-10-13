@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {getProducts} from "../../utils/destacadosProducts"
 
 const INITIAL_STATE ={
-    destacados : getProducts (5)
+    destacados : getProducts (4)
 }
 
 export const destacadosSlice = createSlice({

@@ -3,14 +3,15 @@ import { motion } from "framer-motion";
 
 export const ModalContainer = styled(motion.div)`
   position: absolute;
-  top: 15%;
+  margin-top: 5.7rem;
+  top: 18%;
   right: 0;
   z-index: 99;
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  width: 420px;
+  width: 50%;
   height: auto;
   padding: 2rem;
   background-color: black;
@@ -21,15 +22,29 @@ export const TitleStyled = styled.div`
   margin: 0 0 1.5rem 0;
   display: flex;
   justify-content: space-between;
+
   & h2 {
     margin-top: 0;
     color: #fff;
   };
+  button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: gray;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffff;
+    cursor: pointer;
+  }
 `;
 
 export const ProductContainer = styled.div`
   height: 95px;
-
 `;
 
 export const ProductsWrapperStyled = styled.div`
@@ -55,23 +70,26 @@ export const ProductsWrapperStyled = styled.div`
 
 export const ProductContainerStyled = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1.2rem;
   width: 380px;
   border-radius: 1rem;
   padding: 1rem;
   background: #2d2e28;
+  justify-content: center;
 
   & img {
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
+    height: 100px;
+    width: 90px;
     border-radius: 0.5rem;
   }
+  @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
-export const TextContainerStyled = styled.div`
+export const TextContainer= styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -83,14 +101,31 @@ export const TitleCard = styled.h3`
   color: #fff;
   font-size: 1.1rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  text-align: center;
 `;
 
-export const PriceCard = styled.div``;
+export const PriceCard = styled.div`
+text-align:center;
+`;
 
-export const QuantityContainerStyled = styled.div`
+export const ContainerOfQuantity = styled.div`
   display: flex;
   align-items: center;
+  
+  button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: gray;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffff;
+    cursor: pointer;
+  }
 `;
 
 export const Divider = styled.span`
@@ -138,8 +173,3 @@ export const TotalPriceContainer = styled.div`
     color: #fff;
   }
 `;
-
-export const AnimatePresence = styled.div ``
-
-
-

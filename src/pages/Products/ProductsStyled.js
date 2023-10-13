@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Title = styled.h2 `
 text-align: center;
+margin-top: 15%;
 `
 
 export const ProductsContainer = styled.div`
@@ -66,4 +67,30 @@ p {
 
 export const PriceContainer = styled.div``
 
-export const CardPrice = styled.div``
+export const CardPrice = styled.div``;
+
+export const ContainerSelect = styled.div`
+display: flex;
+flex-direction: row;
+gap: 20px;
+justify-content: center;
+text-align: center;
+margin: 0 3rem;
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+    }
+
+button{
+    background-color: #C0C0C0;
+    color: black;
+    border-radius: 10px;
+    width: 8rem;
+    height: 2rem;
+    font-size: 18px;
+}
+
+
+`;

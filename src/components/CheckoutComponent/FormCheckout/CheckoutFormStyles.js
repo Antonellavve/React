@@ -7,14 +7,13 @@ export const CheckoutDatosStyled = styled.div`
     height: auto;
 `;
 
-export const StyledFormik = styled(Formik)` // Cambia el nombre de Formik a StyledFormik
+export const StyledFormik = styled(Formik)` 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 `;
 
-export const StyledForm = styled(Form)` // Cambia el nombre de Form a StyledForm
+export const StyledForm = styled(Form)` 
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
 `;

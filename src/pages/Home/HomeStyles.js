@@ -1,11 +1,23 @@
 import styled from "styled-components";
 
+export const HomePage = styled.div`
+width: 100vw;
+max-width: 1600px;
+margin: 0 auto;
+
+@media (max-width: 320px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+`;
+
 export const HeroContainer = styled.section`
 display: flex;
 justify-content: center;
 align-items: center;
-max-width: 100%;
-margin: 0;
+width: 100%;
+margin-top: 8%;
 gap: 30px;
 
 .glitch {
@@ -66,17 +78,22 @@ gap: 30px;
     }
 }
 
-    @media (max-width: 1000px) {
-        flex-direction: column;
-    }
 `
 export const HeroImg = styled.div`
-	width: 100%;
 	img {
 		width: 100%;
 		padding-bottom: 75px;
 	}
-	@media (max-width: 1000px) {
+	@media (max-width: 768px) {
 		display: none;
 	}
 `;
+
+export const CategoriesSection = styled.div`
+margin: 0 2rem;
+`;
+
+export const CardsContainer = styled.div`
+margin: 0  2rem;
+`;
+

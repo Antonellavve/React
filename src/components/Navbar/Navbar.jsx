@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.png";
 import { ContainerNavbar, LinksContainer, MenuStyled, NavLinkStyled, NavbarContainer, CartAndUser } from './NavbarStyles';
 import { Contexto } from './MenuContext';
 
-import { FaRegUser } from "react-icons/fa";
+// import { FaRegUser } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import ModalCart from './ModalCart/ModalCart';
 import Cart from './Cart';
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <CartAndUser>
                     <Cart/>
                     <ModalCart/>
-                    <FaRegUser size={20} />
+                    {/* <FaRegUser size={20} /> */}
                 </CartAndUser>
                 
                 <MenuStyled onClick={() => dispatch({ type: "openMenu" })}>

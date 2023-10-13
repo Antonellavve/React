@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 
-export const CardContainerStyled = styled.div`
+export const CardContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
-
-    width: 85%;
-
-    background: var(--gray-bg);
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    gap: 1.2rem;
+    width: 380px;
+    border-radius: 1rem;
     padding: 1rem;
-    border-radius: 15px;
+    background: #2d2e28;
 
     & img {
-        width: 80px;
         height: 80px;
-        border-radius: 16px;
+        width: 80px;
         object-fit: cover;
+        border-radius: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
     }
 `;
 
@@ -29,27 +30,30 @@ export const CardInfoStyled = styled.div`
     width: 240px;
 `;
 
+export const TotalPrice = styled.div`
+`;
+
 export const ProductTitleStyled = styled.h3`
-    margin: 0;
-    margin-bottom: 2px;
-    font-weight: 500;
+    margin-top: 0;
+    color: #fff;
 `;
 
-export const TextStyled = styled.h3`
-    margin: 0;
-    color: #666;
-    font-size: 1rem;
-`;
-
-export const PriceStyled = styled.span`
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 2rem;
-    background: var(--btn-gradient);
-    -webkit-text-fill-color: transparent;
-`;
-
-export const QuantityContainerStyled = styled.span`
+export const QuantityContainer = styled.span`
     display: flex;
     align-items: center;
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: gray;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #ffff;
+        cursor: pointer;
+    }
 `;

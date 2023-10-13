@@ -6,7 +6,7 @@ import {BsFillPinMapFill} from "react-icons/bs"
 const AboutUs = () => {
 return (
     <AboutUsContainer>
-        <h2>Nuestra Historia</h2>
+        <h1>Nuestra Historia</h1>
         <TextAboutUs>
             <h3>Bienvenidos a nuestro mundo</h3> 
                 <p>Akika se crea en el 2020, con el comienzo de una pandemia que iba a dejar una marca en todos.

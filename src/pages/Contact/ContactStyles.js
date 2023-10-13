@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
+export const ContactTitle = styled.div`
+text-align: center;
+color: aliceblue;
+margin-top: 8rem;
+`;
+
 export const ContainerContact = styled.section`
-margin-top: 35px;
 display: flex;
 flex-direction: row;
 font-size: 23px;
@@ -20,20 +25,14 @@ p{
 export const ContactUs = styled.div`
 background: white;
 color: black;
-width: 30%;
+width: 35%;
 border-radius: 10px;
 font-size: 15px;
 height: auto;
 border: 2px solid #bfff00;
+
 p{
     font-size:14px;
-}
-
-a{
-    background-color: gray;
-    border-radius: 5px;
-    color: #000000;
-    padding: 10px;
 }
 `
 

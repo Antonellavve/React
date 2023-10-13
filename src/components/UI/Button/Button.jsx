@@ -3,7 +3,7 @@ import { StyledButton } from './ButtonStyles'
 
 const Button = ({
     children,
-    radius = '32',
+    radius = '20',
     disabled = false,
     onClick = (e) => e.preventDefault(),
 }) => {

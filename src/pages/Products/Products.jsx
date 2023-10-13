@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ProductsContainer, Card, Title } from './ProductsStyled';
+import { ContainerSelect, ProductsContainer, Card, Title } from './ProductsStyled';
 import { productsList } from '../../data/products';
 import Button from '../../components/UI/Button/Button';
+import { ButtonContainer} from "../../components/UI/Button/ButtonStyles";
 import { useSelector, useDispatch } from 'react-redux';
 import { LIMITE_INICIAL } from '../../utils/limitProducts';
-import { ButtonContainer } from "../../components/UI/Button/ButtonStyles";
 import { addToCart } from '../../Redux/Cart/cartSlice';
 import { formatPrice } from "../../utils/formatPrice";
+import { selectCategory } from '../../Redux/Categories/categoriesSlice';
 
 const Products = () => {
     const [limit, setLimit] = useState(LIMITE_INICIAL);
@@ -14,11 +15,11 @@ const Products = () => {
 
     const { selectedCategory } = useSelector((state) => state.categories);
     let products = useSelector((state) => state.products.products);
-    const totalProducts = useSelector((state) => state.products.totalProducts);
-
     if (selectedCategory) {
         products = products[selectedCategory];
     }
+    
+    const totalProducts = useSelector((state) => state.products.totalProducts);
 
     useEffect(() => {
         setLimit(LIMITE_INICIAL);
@@ -39,11 +40,27 @@ const Products = () => {
         dispatch(addToCart(product));
     };
 
+    const handleCategorySelect = (category) => {
+        // Utiliza la acción selectCategory para cambiar la categoría seleccionada en el estado de Redux
+        dispatch(selectCategory(category));
+    };
+    
+
     return (
         <>
             <Title>
                 <h2>Nuestros Productos</h2>
             </Title>
+
+            <ContainerSelect>
+                <button className='category' onClick={() => handleCategorySelect('Todos')}>Todos</button>
+                <button className='category' onClick={() => handleCategorySelect('Camperas')}>Camperas</button>
+                <button className='category' onClick={() => handleCategorySelect('Pantalones')}>Pantalones</button>
+                <button className='category' onClick={() => handleCategorySelect('Remeras')}>Remeras</button>
+                <button className='category' onClick={() => handleCategorySelect('Vestidos')}>Vestidos</button>
+                <button className='category' onClick={() => handleCategorySelect('Buzos')}>Buzos</button>
+            </ContainerSelect>
+
             <ProductsContainer>
                 {productsList?.slice(0, limit).map((product) => {
                     const { id, title, img, price } = product;

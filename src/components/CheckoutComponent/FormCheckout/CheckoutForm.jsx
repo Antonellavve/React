@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../../../Redux/Cart/cartSlice";
-import Loader from "../../UI/Loader/Loader";
 import Input from "../../UI/Input/Input";
 import { createOrder } from "../../../axios/orders";
 import { checkoutValues } from "../../../formik/Values";
@@ -24,7 +23,7 @@ import {
     return (
         <CheckoutDatosStyled>
         <h2>Ingresá tus datos</h2>
-        <Formik
+        <StyledFormik
             initialValues={checkoutValues}
             validationSchema={checkoutValidation}
             onSubmit={async (values, { setSubmitting }) => {
@@ -37,7 +36,7 @@ import {
             };
             try {
                 await createOrder(orderData, dispatch, currentUser);
-                navigate("/felicitaciones");
+                navigate("/pedidoRealizado");
                 dispatch(clearCart());
             } catch (error) {
                 alert("Error al crear la orden");
@@ -85,17 +84,18 @@ import {
                 Dirección
                 </Input>
                 <div>
-                    <br />
-                    <br />
-                    {/* <Button disabled={!cartItems.length || isSubmitting}>
-                    {isSubmitting ? <Loader /> : "Iniciar Pedido"}</Button> */}
-                <Submit disabled={!cartItems.length || isSubmitting}>
-                    {isSubmitting ? <Loader /> : "Iniciar Pedido"}
+                <br />
+                <br />
+                <Submit
+                disabled={!cartItems.length} // Elimina la condición isSubmitting
+                >
+                Iniciar Pedido
                 </Submit>
+
                 </div>
             </StyledForm>
             )}
-        </Formik>
+        </StyledFormik>
         </CheckoutDatosStyled>
     );
 };
