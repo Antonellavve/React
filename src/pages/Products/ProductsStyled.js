@@ -12,7 +12,7 @@ export const Title = styled.h2 `
 text-align: center;
 justify-content: center;
 align-items: center;
-margin-top: 14%;
+margin-top: 9rem;
 
 @media (max-width: 992px) {
     margin-top: 25%
@@ -46,7 +46,7 @@ padding: 5px;
 
 img{
     width: 230px;
-    height: 300px;
+    height: 280px;
     border-radius: 15px;
     padding-top: 20px;
 }
