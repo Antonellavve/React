@@ -7,7 +7,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { formatPrice } from "../../../utils/formatPrice";
 import Counter from "../../UI/Counter/Counter";
-import Submit from "../../UI/Submit/Submit";  // Importa el componente Submit para el modal de confirmación
+import Submit from "../../UI/Submit/Submit"; 
 
 const ModalCartCard = ({ img, title, price, quantity, id }) => {
   const dispatch = useDispatch();

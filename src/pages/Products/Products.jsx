@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { ContainerSelect, ProductsContainer, Card, Title } from './ProductsStyled';
-import { productsList } from '../../data/products';
-import Button from '../../components/UI/Button/Button';
-import { ButtonContainer} from "../../components/UI/Button/ButtonStyles";
 import { useSelector, useDispatch } from 'react-redux';
-import { LIMITE_INICIAL } from '../../utils/limitProducts';
+import { selectCategory } from '../../Redux/Categories/categoriesSlice';
 import { addToCart } from '../../Redux/Cart/cartSlice';
 import { formatPrice } from "../../utils/formatPrice";
-import { selectCategory } from '../../Redux/Categories/categoriesSlice';
+import {ProductsSection, ContainerSelect, ProductsContainer, Card, Title } from './ProductsStyled';
+import {productsList} from "../../data/products" ;
+import Submit from "../../components/UI/Submit/Submit";
+import { LIMITE_INICIAL } from '../../utils/limitProducts';
+import Button from '../../components/UI/Button/Button';
 
 const Products = () => {
     const [limit, setLimit] = useState(LIMITE_INICIAL);
     const dispatch = useDispatch();
 
-    const { selectedCategory } = useSelector((state) => state.categories);
-    let products = useSelector((state) => state.products.products);
-    if (selectedCategory) {
-        products = products[selectedCategory];
-    }
-    
+    const selectedCategory = useSelector((state) => state.categories.selectedCategory);
+    const products = useSelector((state) => state.products.products);
     const totalProducts = useSelector((state) => state.products.totalProducts);
 
     useEffect(() => {
-        setLimit(LIMITE_INICIAL);
+        setLimit(LIMITE_INICIAL); // Restablecer el límite cuando cambia la categoría seleccionada
     }, [selectedCategory]);
 
+    const filteredProducts = selectedCategory
+        ? products[selectedCategory] || []
+        : productsList; // Si no se selecciona ninguna categoría, muestra todos los productos
+
     const handleShowMore = () => {
-        // Aumentar el límite en LIMITE_INICIAL cuando se hace clic en "Ver más"
-        setLimit((prevLimit) => prevLimit + LIMITE_INICIAL);
+        // Aumentar el límite cuando se hace clic en "Ver más"
+        setLimit((prevLimit) => prevLimit + 5);
     };
 
     const handleShowLess = () => {
-        // Disminuir el límite en LIMITE_INICIAL cuando se hace clic en "Ver menos"
-        setLimit((prevLimit) => prevLimit - LIMITE_INICIAL);
+        // Disminuir el límite cuando se hace clic en "Ver menos"
+        setLimit((prevLimit) => prevLimit - 5);
     };
 
     const handleAddToCart = (product) => {
@@ -44,25 +44,34 @@ const Products = () => {
         // Utiliza la acción selectCategory para cambiar la categoría seleccionada en el estado de Redux
         dispatch(selectCategory(category));
     };
-    
 
     return (
-        <>
+        <ProductsSection>
             <Title>
                 <h2>Nuestros Productos</h2>
             </Title>
 
             <ContainerSelect>
-                <button className='category' onClick={() => handleCategorySelect('Todos')}>Todos</button>
-                <button className='category' onClick={() => handleCategorySelect('Camperas')}>Camperas</button>
-                <button className='category' onClick={() => handleCategorySelect('Pantalones')}>Pantalones</button>
-                <button className='category' onClick={() => handleCategorySelect('Remeras')}>Remeras</button>
-                <button className='category' onClick={() => handleCategorySelect('Vestidos')}>Vestidos</button>
-                <button className='category' onClick={() => handleCategorySelect('Buzos')}>Buzos</button>
+                <button className={`category ${selectedCategory === 'Camperas' ? 'active' : ''}`} onClick={() => handleCategorySelect('Camperas')}>
+                    Camperas
+                </button>
+                <button className={`category ${selectedCategory === 'Pantalones' ? 'active' : ''}`} onClick={() => handleCategorySelect('Pantalones')}>
+                    Pantalones
+                </button>
+                <button className={`category ${selectedCategory === 'Remeras' ? 'active' : ''}`} onClick={() => handleCategorySelect('Remeras')}>
+                    Remeras
+                </button>
+                <button className={`category ${selectedCategory === 'RemeronesYVestidos' ? 'active' : ''}`} onClick={() => handleCategorySelect('RemeronesYVestidos')}>
+                    Vestidos
+                </button>
+                <button className={`category ${selectedCategory === 'Buzos' ? 'active' : ''}`} onClick={() => handleCategorySelect('Buzos')}>
+                    Buzos
+                </button>
             </ContainerSelect>
 
+
             <ProductsContainer>
-                {productsList?.slice(0, limit).map((product) => {
+                {filteredProducts.slice(0, limit).map((product) => {
                     const { id, title, img, price } = product;
                     return (
                         <Card key={id}>
@@ -77,23 +86,22 @@ const Products = () => {
                 })}
             </ProductsContainer>
             {!selectedCategory && (
-                <ButtonContainer>
-                    <Button
+                <div className="button-container">
+                    <Submit
                         onClick={handleShowLess}
-                        secondary='true'
                         disabled={limit <= LIMITE_INICIAL}
                     >
-                        <span>Ver menos</span>
-                    </Button>
-                    <Button
+                        Ver menos
+                    </Submit>
+                    <Submit
                         onClick={handleShowMore}
                         disabled={limit >= totalProducts}
                     >
                         Ver más
-                    </Button>
-                </ButtonContainer>
+                    </Submit>
+                </div>
             )}
-        </>
+        </ProductsSection>
     );
 };
 

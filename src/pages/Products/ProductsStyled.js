@@ -1,9 +1,27 @@
-
 import styled from "styled-components";
+
+export const ProductsSection = styled.section`
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; 
+}
+`;
 
 export const Title = styled.h2 `
 text-align: center;
-margin-top: 15%;
+justify-content: center;
+align-items: center;
+margin-top: 14%;
+
+@media (max-width: 992px) {
+    margin-top: 25%
+}
+
+@media (max-width: 546px) {
+    margin-top: 10rem;
+    font-size: 20px;
+}
 `
 
 export const ProductsContainer = styled.div`
@@ -47,7 +65,6 @@ span{
 }
 `
 export const ProductosCard = styled.div`
-    background: var(--gray-bg);
     width: 300px;
     border-radius: 15px;
     padding: 1rem;
@@ -75,22 +92,25 @@ flex-direction: row;
 gap: 20px;
 justify-content: center;
 text-align: center;
-margin: 0 3rem;
+margin: 0 1rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 0;
+        gap: 5px;
     }
 
 button{
     background-color: #C0C0C0;
     color: black;
     border-radius: 10px;
-    width: 8rem;
+    width: 6.5rem;
     height: 2rem;
-    font-size: 18px;
+    font-size: 16px;
 }
-
-
+button.active {
+    background: #bff000;
+    color: black;
+}
 `;
+

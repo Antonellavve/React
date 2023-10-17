@@ -11,7 +11,7 @@ export const ModalContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  width: 50%;
+  width: 60%;
   height: auto;
   padding: 2rem;
   background-color: black;
@@ -23,24 +23,10 @@ export const TitleStyled = styled.div`
   display: flex;
   justify-content: space-between;
 
-  & h2 {
+  & h1 {
     margin-top: 0;
     color: #fff;
   };
-  button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: gray;
-    border: none;
-    border-radius: 15px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #ffff;
-    cursor: pointer;
-  }
 `;
 
 export const ProductContainer = styled.div`
@@ -51,7 +37,7 @@ export const ProductsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -72,7 +58,7 @@ export const ProductContainerStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 10px;
   width: 380px;
   border-radius: 1rem;
   padding: 1rem;

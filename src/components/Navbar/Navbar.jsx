@@ -24,7 +24,7 @@ const Navbar = () => {
                     <NavLinkStyled to='/'>Home</NavLinkStyled>
                     <NavLinkStyled to='/products'>Productos</NavLinkStyled>
                     <NavLinkStyled to='/contact'>Contacto</NavLinkStyled>
-                    <NavLinkStyled to='/aboutUs'>Sobre Nosotros</NavLinkStyled>
+                    <NavLinkStyled to='/aboutUs'>Nosotros</NavLinkStyled>
                 </LinksContainer>
                 
                 <CartAndUser>

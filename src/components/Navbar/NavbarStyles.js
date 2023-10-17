@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 export const NavbarContainer = styled.header`
   /* Estilos del contenedor de la barra de navegación */
   height: 17vh;
-  width:100%;
+  width: 100%;
   background-color: #000000;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export const NavbarContainer = styled.header`
 export const ContainerNavbar = styled.div`
   display: flex;
   margin: 3%;
-  gap: 30px;
+  gap: 15px;
 `
 
 export const LinksContainer = styled.div`
@@ -27,24 +27,23 @@ align-items: center;
 justify-content:center;
 text-align: center;
 font-size: 15px;
-padding: 1.5rem;
+padding: 0.5rem;
 z-index: 1; /* Asegurarse de que esté por encima del contenido */
 background-color: black;
 color: #C0C0C0 !important;
-width: 90%;
+width: 80%;
 right: 5%;
 border-radius: 0 0 50px 50px ;
 
 &.open{
   display: flex;
   flex-direction: column;
-  left: 10px;
 }
 
 @media (max-width: 768px) and (min-width: 320px) {
 display: ${props => (props.isOpenCustom ? "flex" : "none")};
-position: fixed; /* Posición absoluta para que esté debajo del Navbar */
-margin-top: 10%; /* Altura del Navbar para que esté debajo de él */
+position: fixed; 
+margin-top: 5.5rem; /* Altura del Navbar para que esté debajo de él */
 gap: 5%;
 }
 
@@ -88,7 +87,7 @@ export const CartAndUser = styled.div`
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
-    gap:20px;
+    gap: 10px;
 `;
 
 

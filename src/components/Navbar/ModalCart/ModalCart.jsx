@@ -55,6 +55,20 @@ const ModalCart = () => {
             <button
               onClick={openClearCartModal}
               disabled={!cartItems.length}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "40px",
+                height: "40px",
+                background: "gray",
+                border: "none",
+                borderRadius: "15px",
+                fontSize: "1.1rem",
+                fontWeight: "800",
+                color: "#ffff",
+                cursor: "pointer"
+              }}
             >
               {/* icono de vaciar carrito */}
               <AiFillCloseCircle />
@@ -114,7 +128,7 @@ const ModalCart = () => {
           },
           content: {
             width: '50%',
-            height: '25%',
+            height: '28%',
             margin: 'auto',
             zIndex: 1001,
             borderRadius: '10px',
