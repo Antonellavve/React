@@ -7,19 +7,29 @@ export const ModalContainer = styled(motion.div)`
   top: 18%;
   right: 0;
   z-index: 99;
-  display: flex; 
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
   width: 60%;
-  height: auto;
+  max-height: 70vh;
   padding: 2rem;
   background-color: black;
-  border-radius:0 0 50px 50px;
+  border-radius: 0 0 50px 50px;
+  overflow-y: auto;
+  /* Personalización de la barra de desplazamiento en WebKit (Chrome, Safari, etc.) */
+  &::-webkit-scrollbar {
+    width: 18px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: black; /* Color del mango (gris oscuro) */
+    border: 1px solid gray;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: gray; /* Color de fondo de la pista (gris claro) */
+    border: 3px solid black;
+  }
 `;
 
 export const TitleStyled = styled.div`
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   display: flex;
   justify-content: space-between;
 
@@ -29,51 +39,38 @@ export const TitleStyled = styled.div`
   };
 `;
 
-export const ProductContainer = styled.div`
-  height: 95px;
-`;
-
 export const ProductsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 100%;
+  width: 50%;
   height: auto;
   margin: 0 auto;
-  padding: 1rem;
-  padding-left: 0;
-  overflow: scroll;
-
-  &::-webkit-scrollbar {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar:horizontal {
-    display: none;
-  }
 `;
 
 export const ProductContainerStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: 380px;
+  gap: 5px;
+  max-width: 350px; 
   border-radius: 1rem;
   padding: 1rem;
   background: #2d2e28;
   justify-content: center;
 
   & img {
-    height: 100px;
-    width: 90px;
+    height: 130px;
+    width: 120px;
     border-radius: 0.5rem;
   }
+
   @media (max-width: 768px) {
-        flex-direction: column;
-    }
+    flex-direction: column;
+  }
 `;
+
 
 export const TextContainer= styled.div`
   width: 200px;
@@ -108,7 +105,6 @@ export const ContainerOfQuantity = styled.div`
     border: none;
     border-radius: 15px;
     font-size: 1.1rem;
-    font-weight: 800;
     color: #ffff;
     cursor: pointer;
   }
@@ -146,16 +142,7 @@ export const TotalPriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-
-  & p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #fff;
-  }
-
-  & span {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #fff;
-  }
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
 `;

@@ -14,15 +14,16 @@ const Checkout = () => {
     return (
         <div>
         <ContainerCheckout>
+            <ProductsCheckout
+                cartItems = {cartItems}
+                shippingCost = {costShipping}
+                price = {price}/>
+                
             <FormOfCheckout
                 cartItems = {cartItems}
                 shippingCost = {costShipping}
                 price = {price}/>
 
-            <ProductsCheckout
-                cartItems = {cartItems}
-                shippingCost = {costShipping}
-                price = {price}/>
         </ContainerCheckout>
         </div>
     );

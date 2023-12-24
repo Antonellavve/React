@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
 export const ProductosContainerStyled = styled.div`
-    width: 40%;
+    width: 100%;
     text-align: center;
-
+    justify-content: center;
+    align-items: center;
     @media (max-width: 768px) {
+        display: flex;
         flex-direction: column;
     }
 `;
 
 export const CardsWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;

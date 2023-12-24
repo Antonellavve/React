@@ -83,9 +83,11 @@ import {
                 >
                 Dirección
                 </Input>
+                <br />
+                <br />
+                
                 <div>
-                <br />
-                <br />
+
                 <Submit
                 disabled={!cartItems.length} // Elimina la condición isSubmitting
                 >
