@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const ModalContainer = styled(motion.div)`
   position: absolute;
-  margin-top: 5.7rem;
+  margin-top: 5rem;
   top: 18%;
   right: 0;
   z-index: 99;

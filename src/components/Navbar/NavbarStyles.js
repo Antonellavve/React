@@ -43,7 +43,7 @@ border-radius: 0 0 50px 50px ;
 @media (max-width: 768px) and (min-width: 320px) {
 display: ${props => (props.isOpenCustom ? "flex" : "none")};
 position: fixed; 
-margin-top: 5.5rem; /* Altura del Navbar para que esté debajo de él */
+margin-top: 5rem; /* Altura del Navbar para que esté debajo de él */
 gap: 5%;
 }
 

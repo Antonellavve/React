@@ -95,9 +95,10 @@ text-align: center;
 margin: 0 1rem;
 
     @media (max-width: 700px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
     }
 
 button{
