@@ -4,7 +4,7 @@ import { BsShopWindow } from 'react-icons/bs';
 import { toggleHiddenCart } from '../../Redux/Cart/cartSlice';
 import { CartContainer } from './NavbarStyles';
 
-const Cart = () => {
+const CartIcon = () => {
     const totalCartItems = useSelector((state) => state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0)
     const dispatch = useDispatch();
 
@@ -16,4 +16,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default CartIcon;

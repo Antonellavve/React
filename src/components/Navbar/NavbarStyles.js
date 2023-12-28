@@ -88,12 +88,11 @@ export const CartAndUser = styled.div`
     justify-content: center;
     padding: 1rem 0;
     gap: 10px;
+    cursor: pointer;
+    gap: 1.5rem ;
 `;
 
-
 export const CartContainer = styled.div`
-cursor: pointer;
-
 span{
   position: absolute;
   text-align: center;
@@ -106,6 +105,8 @@ span{
   background-color: red;
   font-size: 0.8rem;
 }`;
+
+export const UserContainer = styled.div``;
 
 export const EfectOfCart = styled.div`
   position: fixed;

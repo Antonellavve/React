@@ -3,10 +3,10 @@ import Logo from "../../assets/Logo.png";
 import { ContainerNavbar, LinksContainer, MenuStyled, NavLinkStyled, NavbarContainer, CartAndUser } from './NavbarStyles';
 import { Contexto } from './MenuContext';
 
-// import { FaRegUser } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import ModalCart from './ModalCart/ModalCart';
-import Cart from './Cart';
+import CartIcon from './CartIcon';
+import UserIcon from './UserIcon'
 
 const Navbar = () => {
     const { state, dispatch } = useContext(Contexto);
@@ -28,9 +28,9 @@ const Navbar = () => {
                 </LinksContainer>
                 
                 <CartAndUser>
-                    <Cart/>
+                    <CartIcon/>
                     <ModalCart/>
-                    {/* <FaRegUser size={20} /> */}
+                    <UserIcon/>
                 </CartAndUser>
                 
                 <MenuStyled onClick={() => dispatch({ type: "openMenu" })}>
