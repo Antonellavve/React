@@ -1,5 +1,6 @@
 import React from 'react';
-import { Formik, ErrorMessage } from 'formik';import { useLocation, Link } from 'react-router-dom';
+import { Formik } from 'formik';
+import { useLocation } from 'react-router-dom';
 import {registerValidation} from "../../formik/Validation";
 import {registerInitialValues} from "../../formik/Values"
 import useRedirect from '../../hooks/useRedirect';
@@ -29,8 +30,7 @@ const Register = () => {
           );
           actions.resetForm();
           if (user) {
-            dispatch(
-              setCurrentUser({
+            dispatch(setCurrentUser({
                 ...user.usuario,
                 token: user.token,
               })
@@ -40,13 +40,10 @@ const Register = () => {
       >
         <Form>
           <Input name='name' type='text' placeholder='Nombre' />
-          <ErrorMessage name='name' component='div' />
 
           <Input name='email' type='text' placeholder='Email' />
-          <ErrorMessage name='email' component='div' />
 
           <Input name='password' type='password' placeholder='Password' />
-          <ErrorMessage name='password' component='div' />
 
           <LoginEmailStyled to='/login'>
             <p>¿Ya tienes cuenta? Inicia sesión</p>

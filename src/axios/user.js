@@ -3,7 +3,7 @@ import { BASE_URL } from '../utils/limitProducts';
 
 export const createUser = async (nombre, email, password) => {
     try {
-        const response = await axios.post(`${BASE_URL}auth/register`, {
+        const response = await axios.post (`${BASE_URL}/auth/register`, {
             nombre,
             email,
             password
@@ -17,7 +17,7 @@ export const createUser = async (nombre, email, password) => {
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await axios.post(`${BASE_URL}auth/login`, {
+        const response = await axios.post(`${BASE_URL}/auth/login`, {
             email,
             password
         });
@@ -26,19 +26,18 @@ export const loginUser = async (email, password) => {
         console.log(error);
         return alert(error.response.data.msg);
     }
-
 }
 
-export const verifyUser = async (email, code) =>{
+export const verifyUser = async (email, code) => {
     try {
-        const response = await axios.patch(`${BASE_URL}/auth.verify`,{
+        const response = await axios.patch(`${BASE_URL}/auth/verify`, {
             email,
             code
         });
-        console.log(('Usuario Verificado'));
+        console.log('Usuario Verificado');
         return response.data;
-    }catch(error){
-    console.log(error);
-    return alert (error.response.data.msg);
+    } catch (error) {
+        console.log(error);
+        return alert(error.response.data.msg);
     }
 };
