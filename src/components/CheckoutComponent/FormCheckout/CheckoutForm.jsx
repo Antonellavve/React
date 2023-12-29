@@ -8,11 +8,15 @@ import { createOrder } from "../../../axios/orders";
 import { checkoutValues } from "../../../formik/Values";
 import { checkoutValidation } from "../../../formik/Validation";
 import Submit from "../../UI/Submit/Submit";
-
+import { FaCcVisa, FaCcMastercard, FaCcAmex } from "react-icons/fa";
+import { SiMercadopago } from "react-icons/si";
 import {
     CheckoutDatosStyled,
     StyledForm,
     StyledFormik,
+    IconCash,
+    Check1,
+    Check2
     } from "./CheckoutFormStyles";
 
     const FormOfCheckout = ({ cartItems, shippingCost, price }) => {
@@ -22,7 +26,7 @@ import {
 
     return (
         <CheckoutDatosStyled>
-        <h2>Ingresá tus datos</h2>
+        <h1>Ingresá tus datos</h1>
         <StyledFormik
             initialValues={checkoutValues}
             validationSchema={checkoutValidation}
@@ -47,57 +51,44 @@ import {
         >
             {({ isSubmitting }) => (
             <StyledForm>
-                <Input
-                name="name"
-                htmlFor="nombre"
-                type="text"
-                id="nombre"
-                placeholder="Escribe tu nombre completo"
-                >
-                Nombre
-                </Input>
-                <Input
-                name="cellphone"
-                htmlFor="celular"
-                type="text"
-                id="celular"
-                placeholder="Escribe tu celular"
-                >
-                Celular
-                </Input>
-                <Input
-                name="location"
-                htmlFor="localidad"
-                type="text"
-                id="localidad"
-                placeholder="Escribe tu localidad"
-                >
-                Localidad
-                </Input>
-                <Input
-                name="address"
-                htmlFor="direccion"
-                type="text"
-                id="dirección"
-                placeholder="Escribe tu dirección"
-                >
-                Dirección
-                </Input>
-                <br />
-                <br />
+                <Check1>
+                    <h2>1- Información del Cliente</h2>
+                    <br/>
+                        <Input name="name" htmlFor="nombre" type="text" id="nombre" placeholder="Escribe tu nombre completo">
+                            Nombre</Input>
+                        <Input name="cellphone" htmlFor="celular" type="text" id="celular" placeholder="Escribe tu celular">
+                            Celular</Input>
+                        <Input name="location" htmlFor="localidad" type="text" id="localidad" placeholder="Escribe tu localidad">
+                            Localidad</Input>
+                        <Input name="address" htmlFor="direccion" type="text" id="dirección" placeholder="Escribe tu dirección">
+                            Dirección</Input>
+                </Check1>
                 
-                <div>
-
-                <Submit
-                disabled={!cartItems.length} // Elimina la condición isSubmitting
-                >
-                Iniciar Pedido
-                </Submit>
-
-                </div>
+                <Check2>
+                    <h2>2- Método de Pago</h2>
+                        <IconCash>
+                            <FaCcVisa style={{ fontSize: '30px', marginRight: '8px' }} />
+                            <FaCcMastercard style={{ fontSize: '30px', marginRight: '8px' }}  />
+                            <FaCcAmex style={{ fontSize: '30px', marginRight: '8px' }} />
+                            <SiMercadopago style={{ fontSize: '30px', marginRight: '8px' }} />
+                        </IconCash>
+                        
+                        <Input name="name" type="number" required>
+                            Numero de tarjeta*</Input>
+                        <Input name="date" type="number" required>
+                            Vencimiento*</Input>
+                        <Input name="name cash" type="text" required>
+                            Titular de la tarjeta*</Input>
+                        <Input name="numero" type="number" required>
+                            CVV*</Input>
+                </Check2>
             </StyledForm>
             )}
         </StyledFormik>
+            <Submit disabled={!cartItems.length}>
+                     Finalizar la compra
+            </Submit>
+        
         </CheckoutDatosStyled>
     );
 };

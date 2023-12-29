@@ -14,6 +14,7 @@ const Checkout = () => {
     return (
         <div>
         <ContainerCheckout>
+
             <ProductsCheckout
                 cartItems = {cartItems}
                 shippingCost = {costShipping}

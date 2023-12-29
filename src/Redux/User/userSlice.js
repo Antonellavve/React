@@ -15,6 +15,11 @@ const userSlice = createSlice({
                 currentUser: action.payload,
             };
         },
+        setVerified: state => {
+            if (state.currentUser) {
+              state.currentUser.verified = true;
+            }
+          },
         toggleHiddenMenu: (state) => {
             return {
                 ...state,
@@ -24,6 +29,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { setCurrentUser, toggleHiddenMenu } = userSlice.actions;
+export const { setCurrentUser, setVerified, toggleHiddenMenu } = userSlice.actions;
 
 export default userSlice.reducer;

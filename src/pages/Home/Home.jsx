@@ -2,7 +2,6 @@ import React from 'react'
 import { HeroContainer, HeroImg, HomePage, CardsContainer, CategoriesSection } from './HomeStyles'
 import Categories from '../../components/Categories/Categories'
 import Cards from '../../components/Cards/CardsDestacados'
-import { CategoriesContainer } from '../../components/Categories/CategoriesStyles'
 
 const Home = () => {
     return (

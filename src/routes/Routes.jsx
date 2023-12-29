@@ -9,6 +9,9 @@ import Checkout from '../pages/Checkout/Checkout';
 import PedidoRealizado from '../pages/PedidoRealizado/PedidoRealizado';
 import Register from '../pages/Register/Register';
 import Login from '../pages/Login/login';
+import Hero from '../pages/HeroCheck/HeroCheck';
+import ValidateUser from '../pages/ValidateUser/ValidateUser';
+import DatosPersonales from '../pages/DatosPersonales/DatosPersonales';
 
 function Routes() {
   return (
@@ -23,7 +26,10 @@ function Routes() {
           <Route path='/pedidoRealizado' element={<PedidoRealizado />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          {/* La ruta 404 debería ir al final */}
+          <Route path='/heroCheck' element={<Hero />} />
+          <Route path='/validate' element={<ValidateUser />} />
+          <Route path="/datosPersonales" element={<DatosPersonales />} />
+          {/* La ruta 404 debe ir al final */}
           <Route path='*' element={<h2>ERROR!</h2>} />
         </ReactDomRoutes>
       </Layout>

@@ -1,7 +1,7 @@
 import { formatPrice } from "../../../utils/formatPrice";
 
 import CardProductCheckout from "../../CardProductCheck/CardProductCheckout";
-
+import Submit from "../../UI/Submit/Submit";
 import {
     CardsWrapper,
     EnvioStyled,
@@ -43,7 +43,8 @@ import {
                     <p>Total:</p>
                     <PriceTotalStyled>{formatPrice(price + shippingCost)}</PriceTotalStyled>
                 </TotalStyled>
-            </PriceContainerStyled>
+                </PriceContainerStyled>
+                
         </ProductosContainerStyled>
     );
 };

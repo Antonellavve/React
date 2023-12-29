@@ -102,7 +102,19 @@ const ModalCart = () => {
               <p>Total:</p>
               <span>{formatPrice(totalPrice + costShipping)}</span>
             </TotalPriceContainer>
-
+            <p style={{ color: 'gray', fontSize: '14px', textAlign:'center'}}>
+              Inicia sesión para acceder a beneficios y descuentos exclusivos para miembros.
+            </p>
+            <Submit
+              onClick={async () => {
+                setIsSubmitting(true); // Iniciar el envío
+                navigate("/login");
+                dispatch(toggleHiddenCart());
+              }}
+              disabled={!cartItems.length}
+            >
+              Inicia Sesión 
+            </Submit>
             <Submit
               onClick={async () => {
                 setIsSubmitting(true); // Iniciar el envío
@@ -111,7 +123,7 @@ const ModalCart = () => {
               }}
               disabled={!cartItems.length}
             >
-              Finalizar compra
+              Ver Carrito
             </Submit>
           </ContainerPrice>
         </ModalContainer>
@@ -148,4 +160,3 @@ const ModalCart = () => {
 };
 
 export default ModalCart;
-

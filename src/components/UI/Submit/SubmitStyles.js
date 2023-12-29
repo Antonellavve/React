@@ -11,7 +11,7 @@ export const ButtonSubmitStyled = styled(motion.button)`
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
-    margin: 15px;
+    margin: 20px;
 
 
     &:disabled {

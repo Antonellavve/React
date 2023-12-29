@@ -7,14 +7,13 @@ export const InputBox = styled.div`
     height: 30px;
     padding: 0.5rem 1rem;
     color: white;
-    width: 70%; /* Ajusta el ancho según tus necesidades */
+    width: 100%; /* Ajusta el ancho según tus necesidades */
     margin-top: 0.5rem; /* Ajusta el margen superior según tus necesidades */
     display: flex;
     margin: 1rem 0;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 50%;
+    justify-content: center;
+    align-items: center;
     `;
 
 export const InputLabel = styled.label`

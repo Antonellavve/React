@@ -9,7 +9,7 @@ import Submit from '../../components/UI/Submit/Submit';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../axios/user';
 import { setCurrentUser } from '../../Redux/User/userSlice';
-import {RegisterContainerStyled, Form, LoginEmailStyled} from "./RegisterStyles"
+import {ContainerOfRegister, Form, LoginEmail} from "./RegisterStyles"
 
 const Register = () => {
   const { state } = useLocation();
@@ -17,7 +17,7 @@ const Register = () => {
   useRedirect('/');
 
   return (
-    <RegisterContainerStyled>
+    <ContainerOfRegister>
       <h1>Crea tu cuenta</h1>
       <Formik
         initialValues={registerInitialValues}
@@ -45,13 +45,13 @@ const Register = () => {
 
           <Input name='password' type='password' placeholder='Password' />
 
-          <LoginEmailStyled to='/login'>
+          <LoginEmail to='/login'>
             <p>¿Ya tienes cuenta? Inicia sesión</p>
-          </LoginEmailStyled>
+          </LoginEmail>
           <Submit>Registrarte</Submit>
         </Form>
       </Formik>
-    </RegisterContainerStyled>
+    </ContainerOfRegister>
   );
 };
 
