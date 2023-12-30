@@ -23,16 +23,16 @@ const Register = () => {
         initialValues={registerInitialValues}
         validationSchema={registerValidation}
         onSubmit={async (values, actions) => {
-          const user = await createUser(
+          const userData = await createUser(
             values.name,
             values.email,
             values.password
           );
           actions.resetForm();
-          if (user) {
+          if (userData) {
             dispatch(setCurrentUser({
-                ...user.usuario,
-                token: user.token,
+                ...userData.user,
+                token: userData.token,
               })
             );
           }

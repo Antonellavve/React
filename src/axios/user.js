@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { BASE_URL } from '../utils/limitProducts';
 
-export const createUser = async (nombre, email, password) => {
+export const createUser = async (name, email, password) => {
     try {
         const response = await axios.post (`${BASE_URL}/auth/register`, {
-            nombre,
+            name,
             email,
             password
         });

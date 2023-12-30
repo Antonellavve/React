@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
 import Tabs from '../../components/UI/Tab/Tab'; 
 import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; // Ajusta la ruta según tu estructura
-import {
-  HeroContainer,
-  FormHeroCheck,
-} from './HeroCheckStyles';
+import { HeroContainer} from './HeroCheckStyles';
 import LogoutContent from '../../components/Logout/Logout';
 
 const Hero = () => {
@@ -21,9 +18,6 @@ const Hero = () => {
     setShowUserDetails(false); // Para cerrar los detalles del usuario al cambiar de pestaña
   };
 
-  const toggleUserDetails = () => {
-    setShowUserDetails(!showUserDetails);
-  };
 
   return (
     <HeroContainer>

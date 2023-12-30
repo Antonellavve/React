@@ -2,7 +2,6 @@ import React from 'react';
 import { ContainerDatos } from "./DatosPersonalesStyles";
 import { useNavigate } from 'react-router-dom';import { BASE_URL } from '../../utils/limitProducts';
 import { useSelector, useDispatch } from 'react-redux';
-import {NameStyle} from "./DatosPersonalesStyles"
 
 const DatosPersonales = () => {
   const { currentUser } = useSelector(state => state.user);
