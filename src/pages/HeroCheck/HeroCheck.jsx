@@ -2,54 +2,63 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
+import Tabs from '../../components/UI/Tab/Tab'; 
+import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; // Ajusta la ruta según tu estructura
 import {
   HeroContainer,
   FormHeroCheck,
 } from './HeroCheckStyles';
-import { NavLinkStyled } from '../../components/Navbar/NavbarStyles';
+import LogoutContent from '../../components/Logout/Logout';
 
 const Hero = () => {
-  const currentUser = useSelector(state => state.user.currentUser);
+  const { currentUser } = useSelector(state => state.user);
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('welcome');
   const [showUserDetails, setShowUserDetails] = useState(false);
 
-  const toggleUserDetails = () => setShowUserDetails(!showUserDetails);
+  const handleTabChange = tabId => {
+    setActiveTab(tabId);
+    setShowUserDetails(false); // Para cerrar los detalles del usuario al cambiar de pestaña
+  };
+
+  const toggleUserDetails = () => {
+    setShowUserDetails(!showUserDetails);
+  };
 
   return (
     <HeroContainer>
       {currentUser?.verified ? (
         <div>
-          <h1 className='title'>Bienvenido {currentUser.username}</h1>
-          <Button
-            onClick={() => {
-              navigate('/checkout');
-            }}
-            radius='10'
-          >
-            PEDIDOS
-          </Button>
-          <Button
-            onClick={() => {
-              navigate('/checkout');
-            }}
-            radius='10'
-          >
-            DESCUENTOS
-          </Button>
-          <Button
-            onClick={toggleUserDetails}
-            radius='10'
-          >
-            MI CUENTA
-          </Button>
-          {showUserDetails && (
-            <NavLinkStyled to='/datosPersonales'>Datos Personales</NavLinkStyled>
+          
+              <h1 className='title'>BIENVENIDO {`${currentUser?.nombre}`}</h1>
+           
+          <Tabs
+            
+            tabs={[
+              { id: 'account', label: 'MI CUENTA' },
+              { id: 'order', label: 'MI PEDIDO' },
+              { id: 'logout', label: 'CERRAR SESIÓN' },
+            ]}
+            activeTab={activeTab}
+            onTabChange={handleTabChange}
+          />
+          {activeTab === 'order' && (
+                navigate("/checkout")
+          )}
+          {activeTab === 'account' && (
+            <div>
+              <DatosPersonales />
+            </div>
+          )}
+          {activeTab === 'logout' && (
+            <div>
+              <LogoutContent/>
+            </div>
           )}
         </div>
       ) : (
         <div>
-          <h1 className='title'>HOLA </h1>
-          <FormHeroCheck>
+          <h1>HOLA</h1>
             <Button
               onClick={() => {
                 navigate('/validate');
@@ -58,7 +67,6 @@ const Hero = () => {
             >
               Validar usuario
             </Button>
-          </FormHeroCheck>
         </div>
       )}
     </HeroContainer>

@@ -16,3 +16,5 @@ export const FormHeroCheck = styled.form`
   gap: 20px;
   position: relative;
 `;
+
+export const Tab = styled.div``;

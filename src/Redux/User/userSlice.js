@@ -19,7 +19,7 @@ const userSlice = createSlice({
             if (state.currentUser) {
               state.currentUser.verified = true;
             }
-          },
+          },       
         toggleHiddenMenu: (state) => {
             return {
                 ...state,

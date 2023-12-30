@@ -11,7 +11,8 @@ import Register from '../pages/Register/Register';
 import Login from '../pages/Login/login';
 import Hero from '../pages/HeroCheck/HeroCheck';
 import ValidateUser from '../pages/ValidateUser/ValidateUser';
-import DatosPersonales from '../pages/DatosPersonales/DatosPersonales';
+import DatosPersonales from '../components/DatosPersonales/DatosPersonales';
+
 
 function Routes() {
   return (

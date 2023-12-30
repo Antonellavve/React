@@ -1,4 +1,3 @@
-import React from 'react';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { loginValidation } from '../../formik/Validation';
@@ -23,24 +22,24 @@ const Login = () => {
         initialValues={loginInitialValues}  
         validationSchema={loginValidation}  
         onSubmit={async (values) => {
-          const user = await loginUser(
+          const userData = await loginUser(
             values.email,  
             values.password
           );
-          if (user) {
+          if (userData) {
             dispatch(setCurrentUser({
-              ...user.usuario,
-              token: user.token
+              ...userData.user,
+              token: userData.token
             }));
           }
         }}
       >
         <Form>
-          <Input name={"email"} type={"text"} placeholder={"Usuario"}/>
-          <Input name={"password"} type={"password"} placeholder={"Contraseña"}/>
+          <Input name='email' type="text" placeholder="Email" />
+          <Input name='password' type="password" placeholder="Password" />
           
-          <Link to={"/register"}>
-            <LoginEmail>¿No tienes usuario? Regístrate</LoginEmail>
+          <Link to="/register">
+            <LoginEmail>¿No tienes cuenta? Regístrate</LoginEmail>
           </Link>
           
           <Submit >Ingresar</Submit>
