@@ -1,19 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const TabContainer = styled.div`
-  display: flex;
-  margin-bottom: 10px;
-`;
-
-const TabButton = styled.button`
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-  background-color: ${props => (props.active ? '#eee' : 'transparent')};
-`;
+import { TabContainer, TabButton } from './TabsStyles';
 
 const Tabs = ({ tabs, activeTab, onTabChange }) => (
   <TabContainer>

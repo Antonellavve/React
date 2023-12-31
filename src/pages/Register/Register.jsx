@@ -1,6 +1,5 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { useLocation } from 'react-router-dom';
 import {registerValidation} from "../../formik/Validation";
 import {registerInitialValues} from "../../formik/Values"
 import useRedirect from '../../hooks/useRedirect';
@@ -12,9 +11,8 @@ import { setCurrentUser } from '../../Redux/User/userSlice';
 import {ContainerOfRegister, Form, LoginEmail} from "./RegisterStyles"
 
 const Register = () => {
-  const { state } = useLocation();
   const dispatch = useDispatch();
-  useRedirect('/');
+  useRedirect('/heroCheck');
 
   return (
     <ContainerOfRegister>

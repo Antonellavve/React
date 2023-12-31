@@ -1,8 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../../utils/limitProducts';
 import {clearCurrentUser} from '../../Redux/User/userSlice'
+import Submit from "../UI/Submit/Submit"
+
+
 const Logout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ const Logout = () => {
   return (
     <div>
       <p>¿Estás seguro de que deseas cerrar sesión?</p>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
+      <Submit onClick={handleLogout}>Cerrar Sesión</Submit>
     </div>
   );
 };
