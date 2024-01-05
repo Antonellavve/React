@@ -7,6 +7,10 @@ export const createUser = async (name, email, password) => {
             name,
             email,
             password
+        }, {
+            headers: {
+                'admin-key': password
+            }
         });
         console.log(response.data);
         return response.data;

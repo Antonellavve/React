@@ -115,3 +115,57 @@ button.active {
 }
 `;
 
+export const ContainerProductsStyled = styled.div`
+margin-top: 20rem;
+
+`;
+
+export const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 20px;
+`;
+
+export const TxtContainerStyled = styled.div`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: x-large;
+  gap: 1rem;
+  text-align: left;
+  width: 50%;
+  span {
+    color: var(--dark-blue);
+    background-color: var(--selective-yellow);
+    padding: 2px 1px;
+    transform: skew(35deg);
+    font-weight: 500;
+  }
+
+  @media (max-width: 1200px){
+    font-size: large;
+  }
+  @media (max-width: 992px){
+    font-size: medium;
+    p:nth-child(2){
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    text-align:center;
+    p:nth-child(3){
+      display: none;
+  }
+}`
+
+
+export const ImgContainer = styled.div ``;
+
+

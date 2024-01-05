@@ -1,23 +1,31 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaRegUser } from 'react-icons/fa';
-import { toggleHiddenMenu } from '../../Redux/User/userSlice';
 import { UserContainer } from './NavbarStyles';
-import { useNavigate } from 'react-router-dom';  // Importa useNavigate
+import { useNavigate } from 'react-router-dom';
+import { clearCurrentUser } from '../../Redux/User/userSlice';
+import { CiLogout } from "react-icons/ci";
 
 const UserIcon = () => {
-    const currentUser = useSelector((state) => state.user.currentUser);  // Asegúrate de obtener el estado actual del usuario
-    const totalCartItems = useSelector((state) => state.cart.cartItems).reduce((acc, item) => (acc += item.quantity), 0)
+    const currentUser = useSelector((state) => state.user.currentUser);
     const dispatch = useDispatch();
-    const navigate = useNavigate();  // Obtén la función de navegación
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        dispatch(clearCurrentUser());
+        sessionStorage.removeItem('token');
+        navigate('/login');
+    };
 
     return (
-        <UserContainer onClick={() => {
-            currentUser ?
-            dispatch(toggleHiddenMenu()) :
-            navigate("/Login")}
-          }>
-        <FaRegUser size={20} />
+        <UserContainer>
+            {currentUser ? (
+                <>
+                    <CiLogout size={20} onClick={handleLogout} />
+                    {/* Additional UserIcon logic for logged-in state */}
+                </>
+            ) : (
+                <FaRegUser size={20} onClick={() => navigate("/Login")} />
+            )}
         </UserContainer>
     );
 };

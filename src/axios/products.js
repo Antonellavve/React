@@ -1,19 +1,25 @@
 import axios from 'axios';
-import { BASE_URL } from '../utils';
+import { BASE_URL } from '../utils/limitProducts';
 
-export const createIssue = async (
+export const createProducts = async (
+  id,
   title,
-  description,
-  priority,
+  img,
+  price,
+  category,
+  stock,
   currentUser
 ) => {
   try {
     const response = await axios.post(
-      `${BASE_URL}/issues`,
+      `${BASE_URL}/products`,
       {
+        id,
         title,
-        description,
-        priority,
+        img,
+        price,
+        category,
+        stock
       },
       {
         headers: {
@@ -21,7 +27,7 @@ export const createIssue = async (
         },
       }
     );
-    alert('Issue creado correctamente');
+    alert('Producto creado correctamente');
     return response.data;
   } catch (err) {
     console.log(err);

@@ -7,7 +7,7 @@ export const ContainerValidate = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 20rem;
+  margin-top: 10rem;
 `;
 
 export const Form = styled(FormikForm)`

@@ -12,7 +12,7 @@ import Login from '../pages/Login/login';
 import Hero from '../pages/HeroCheck/HeroCheck';
 import ValidateUser from '../pages/ValidateUser/ValidateUser';
 import DatosPersonales from '../components/DatosPersonales/DatosPersonales';
-
+import PageProducts from '../pages/Products/PageProducts'
 
 function Routes() {
   return (
@@ -30,6 +30,8 @@ function Routes() {
           <Route path='/heroCheck' element={<Hero />} />
           <Route path='/validate' element={<ValidateUser />} />
           <Route path="/datosPersonales" element={<DatosPersonales />} />
+          <Route path="/productsAdd" element={<PageProducts />} />
+
           {/* La ruta 404 debe ir al final */}
           <Route path='*' element={<h2>ERROR!</h2>} />
         </ReactDomRoutes>

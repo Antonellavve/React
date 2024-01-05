@@ -106,7 +106,11 @@ span{
   font-size: 0.8rem;
 }`;
 
-export const UserContainer = styled.div``;
+export const UserContainer = styled.div`
+display:flex;
+flex-direction:row;
+gap: 10%;
+`;
 
 export const EfectOfCart = styled.div`
   position: fixed;

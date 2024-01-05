@@ -34,6 +34,7 @@ const ValidateUser = () => {
   return (
     <ContainerValidate>
       <h1>Validar cuenta</h1>
+      <p>Ingresa el codigo de validación que te enviamos a tu correo electrónico</p>
       <Formik
         initialValues={validateInitialValues}
         validationSchema={validateValidation}

@@ -21,7 +21,9 @@ const Questions = () => {
             <br />
               1) Tienes un plazo de hasta 180 días para comunicarte con nuestro Servicio de Atención a Clientes 
               2) Si al momento de tu solicitud: 
+              <br />
                   2.1 Contamos con el inventario para reemplazar tu producto, te haremos llegar uno nuevo. 
+              <br />
                   2.2 Si no contamos con el inventario disponible, haremos el reembolso integro de tu artículo(s)</p>
 
             <h3>¿CÓMO ES EL PROCESO DE DEVOLUCIÓN DE UN PEDIDO EN AKIKA?</h3>

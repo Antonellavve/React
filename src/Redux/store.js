@@ -1,5 +1,3 @@
-// store.js
-
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import persistReducer from 'redux-persist/es/persistReducer';
 import { persistStore } from 'redux-persist';

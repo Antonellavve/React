@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
 import Tabs from '../../components/UI/Tab/Tabs'; 
 import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; // Ajusta la ruta según tu estructura
 import {  HeroCheckStyled, HeroContainer } from './HeroCheckStyles';
 import LogoutContent from '../../components/Logout/Logout';
 import Questions from '../../components/Questions/Questions';
-
+import { motion } from 'framer-motion';
+import { ADMIN } from '../../utils/limitProducts';
 
 const Hero = () => {
   const { currentUser } = useSelector(state => state.user);
@@ -25,7 +26,6 @@ const Hero = () => {
     <HeroCheckStyled>
       {currentUser?.verified ? (
         <HeroContainer>
-          
               <h1 className='title'>BIENVENIDO {`${currentUser?.nombre}`}</h1>
           <Tabs
             
@@ -57,6 +57,13 @@ const Hero = () => {
                 <LogoutContent/>
               </div>
             )}
+            <motion.div whileTap ={{scale:0.97}}>
+              {currentUser?.rolAdmin===ADMIN?(
+                <Link to='/productsAdd'>Crear Producto</Link>
+              ):(
+                <span>No puedes crear productos</span>
+              )}
+            </motion.div>
           
         </HeroContainer>
       ) : (

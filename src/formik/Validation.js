@@ -46,3 +46,11 @@ export const validateValidation = Yup.object({
     .max(6, 'Máximo de caracteres: 6')
     .required('Campo Requerido'),
 });
+
+export const ProductsValidationSchema = Yup.object({
+  title: Yup.string().required('Campo Requerido'),
+  category: Yup.string().required('Campo Requerido'),
+  price: Yup.number().required('Campo Requerido'),
+  id: Yup.number().required('Campo Requerido'),
+  stock: Yup.number().required('Campo Requerido'),
+});

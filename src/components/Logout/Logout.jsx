@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {clearCurrentUser} from '../../Redux/User/userSlice'
-import Submit from "../UI/Submit/Submit"
-
+import { clearCurrentUser } from '../../Redux/User/userSlice';
+import Submit from '../UI/Submit/Submit';
 
 const Logout = () => {
   const dispatch = useDispatch();
@@ -23,6 +22,21 @@ const Logout = () => {
       console.error('Error al cerrar sesión:', error);
     }
   };
+
+  useEffect(() => {
+    const handleUnload = () => {
+      // Llamar a la función de logout cuando el usuario cierra la pestaña o recarga la página
+      handleLogout();
+    };
+
+    // Agregar el evento unload
+    window.addEventListener('unload', handleUnload);
+
+    // Retornar una función de limpieza para quitar el evento cuando el componente se desmonte
+    return () => {
+      window.removeEventListener('unload', handleUnload);
+    };
+  }, []);
 
   return (
     <div>

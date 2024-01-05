@@ -19,3 +19,10 @@ export const loginInitialValues = {
 export const validateInitialValues = {
     code: '',
   };
+
+export const ProductsInitialValues = {
+    title: '',
+    category: '',
+    price: '',
+    stock: '',
+};
