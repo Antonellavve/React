@@ -27,3 +27,19 @@ export const DataUser = styled.div`
     margin: 0;
   }
 `;
+
+export const EditButton = styled.div`
+  margin-top: 10px;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+`;
+
+export const EditableField = styled.div`
+`

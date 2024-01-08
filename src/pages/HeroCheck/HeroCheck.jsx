@@ -26,7 +26,7 @@ const Hero = () => {
     <HeroCheckStyled>
       {currentUser?.verified ? (
         <HeroContainer>
-              <h1 className='title'>BIENVENIDO {`${currentUser?.nombre}`}</h1>
+              <h1 className='title'>BIENVENIDO {`${currentUser?.name}`}</h1>
           <Tabs
             
             tabs={[
@@ -68,7 +68,9 @@ const Hero = () => {
         </HeroContainer>
       ) : (
         <div>
-          <h1>HOLA</h1>
+          <h1>BIENVENIDO</h1>
+          <p>Ingresa el código que te enviamos a tu correo electrónico</p>
+            <br />
             <Button
               onClick={() => {
                 navigate('/validate');

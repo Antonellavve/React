@@ -9,10 +9,12 @@ export const ButtonSubmitStyled = styled(motion.button)`
     background: #bff000;
     color: black;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     margin: 20px;
-
+    &:hover {
+        color: white;
+    }
 
     &:disabled {
         cursor: not-allowed;

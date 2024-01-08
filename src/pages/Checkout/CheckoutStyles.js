@@ -6,5 +6,11 @@ export const ContainerCheckout= styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-top: 8rem;
+    margin: 8rem;
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    };
 `;

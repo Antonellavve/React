@@ -24,11 +24,9 @@ const ValidateUser = () => {
           }
         }
       } catch (error) {
-        console.error('Error during verification:', error);
+        console.error('Error en la verificación', error);
       }
     };
-
-    handleVerification();
   }, [currentUser, navigate]);
 
   return (

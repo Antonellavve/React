@@ -20,14 +20,14 @@ export const getOrders = async (dispatch, currentUser) => {
         }
     } catch (error) {
         console.log(error);
-        dispatch(fetchOrdersFail("Upss, algo salío mal. No hay ordenes sin usuario, es como querer jugar al fútbol sin una pelota"))
+        dispatch(fetchOrdersFail("Algo salio mal"))
     }
 }
 
 export const createOrder = async (order, dispatch, currentUser) => {
     try {
 
-        const response = await axios.post(`${BASE_URL}orders`, order, {
+        const response = await axios.post(`${BASE_URL}/orders`, order, {
             headers: {
                 'x-token': currentUser.token
             }

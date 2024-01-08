@@ -115,8 +115,8 @@ button.active {
 }
 `;
 
-export const ContainerProductsStyled = styled.div`
-margin-top: 20rem;
+export const ContainerOfProducts = styled.div`
+margin-top: 10rem;
 
 `;
 
@@ -166,6 +166,5 @@ display: flex;
 }`
 
 
-export const ImgContainer = styled.div ``;
 
 

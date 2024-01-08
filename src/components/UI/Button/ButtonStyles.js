@@ -8,10 +8,10 @@ export const StyledButton = styled.div`
     background: #bfff00;
     color: black;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: bold;
     cursor: pointer;
     &:hover {
-        opacity: 95%;
+        color: white;
     }
     &:disabled {
         cursor: not-allowed;
