@@ -9,23 +9,11 @@ const INITIAL_STATE = {
   error: false
 };
 
-export const productsSort = (products, orderBy, ascendent) => {
-  switch (orderBy) {
-    case "price":
-      ascendent
-        ? products.sort((a, b) => a.price - b.price)
-        : products.sort((a, b) => b.price - a.price);
-      break;
-    default:
-      break;
-  }
-  return products;
-};
-
 const productsSlice = createSlice({
   name: "products",
   initialState: INITIAL_STATE,
   reducers: {
+
     createProducts: (state) => {
       return state.products;
     },
@@ -35,9 +23,6 @@ const productsSlice = createSlice({
     orderProducts: (state, action) => {
       state.products = productsSort([...state.products], ...action.payload);
     },
-    fetchingProducts: (state) => {
-      state.isLoading = true;
-    },
     successFetchingProducts: (state, action) => {
       state.isLoading = false;
       state.error = false;
@@ -46,17 +31,24 @@ const productsSlice = createSlice({
     errorFetchingProducts: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
-    }
+    },
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
   }
 });
 
+// Exportando las acciones, incluyendo la nueva
 export const {
+  addNewProduct,
   createProducts,
   getProducts,
   orderProducts,
   fetchingProducts,
   successFetchingProducts,
-  errorFetchingProducts
+  errorFetchingProducts,
+  setProducts
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
+

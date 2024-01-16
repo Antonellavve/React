@@ -1,7 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
 import { Formik } from 'formik';
+import { Form as FormikForm } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { createProducts } from '../../Redux/Products/productsSlice';
+import {
+  addNewProduct,
+
+} from '../../Redux/Products/productsSlice';
 import Input from '../../components/UI/Input/Input';
 import Submit from '../../components/UI/Submit/Submit';
 import { ContainerOfProducts, Form } from './ProductsStyled';
@@ -9,6 +14,7 @@ import { ProductsInitialValues } from "../../formik/Values";
 import { ProductsValidationSchema } from '../../formik/Validation';
 import { useNavigate } from 'react-router-dom';
 import { ADMIN } from '../../utils/limitProducts';
+import {createProduct} from "../../axios/products.js";
 
 const AddProduct = () => {
   const dispatch = useDispatch();
@@ -32,19 +38,24 @@ const AddProduct = () => {
       <Formik
         initialValues={ProductsInitialValues}
         validationSchema={ProductsValidationSchema}
-        onSubmit={async values => {
-            const productData =  await createProducts(
-                values.id,
-                values.title,
-                values.img,
-                values.price,
-                values.category,
-                values.stock,
-                currentUser
-            );
-              navigate('/products')
-
-            actions.resetForm();
+        onSubmit={async (values, actions) => {
+          const userString = localStorage.getItem('user');
+          const userObject = JSON.parse(userString);
+          // Obtener el token del usuario
+          const token = userObject?.currentUser?.token;
+          const productData = await createProduct(
+              values.id,
+              values.title,
+              values.img,
+              values.price,
+              values.category,
+              values.stock
+          );
+          if (productData) {
+            dispatch(addNewProduct(productData));
+            navigate('/products'); // Cambiar a la ruta deseada
+          }
+          actions.resetForm();
         }}
       >
         {/* Formulario renderizado por Formik */}

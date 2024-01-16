@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ProductosContainerStyled = styled.div`
-    width: 40%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 2rem;
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;

@@ -15,8 +15,8 @@ export const NavbarContainer = styled.header`
 
 export const ContainerNavbar = styled.div`
   display: flex;
-  margin: 3%;
   gap: 15px;
+  margin: 3%;
 `
 
 export const LinksContainer = styled.div`
@@ -31,8 +31,7 @@ padding: 0.5rem;
 z-index: 1; /* Asegurarse de que esté por encima del contenido */
 background-color: black;
 color: #C0C0C0 !important;
-width: 80%;
-right: 5%;
+width: 90%;
 border-radius: 0 0 50px 50px ;
 
 &.open{
@@ -45,6 +44,7 @@ display: ${props => (props.isOpenCustom ? "flex" : "none")};
 position: fixed; 
 margin-top: 5rem; /* Altura del Navbar para que esté debajo de él */
 gap: 5%;
+right: 0;
 }
 
 a {

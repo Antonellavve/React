@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectCategory } from '../../Redux/Categories/categoriesSlice';
 import { addToCart } from '../../Redux/Cart/cartSlice';
 import { formatPrice } from "../../utils/formatPrice";
-import {ProductsSection, ContainerSelect, ProductsContainer, Card, Title } from './ProductsStyled';
-import {productsList} from "../../data/products" ;
+import { ProductsSection, ContainerSelect, ProductsContainer, Card, Title } from './ProductsStyled';
 import Submit from "../../components/UI/Submit/Submit";
-import { LIMITE_INICIAL } from '../../utils/limitProducts';
 import Button from '../../components/UI/Button/Button';
+import axios from "axios";
+import { BASE_URL, LIMITE_INICIAL } from '../../utils/limitProducts';
+import { fetchAllProducts } from '../../axios/products';
 
 const Products = () => {
     const [limit, setLimit] = useState(LIMITE_INICIAL);
@@ -18,12 +19,12 @@ const Products = () => {
     const totalProducts = useSelector((state) => state.products.totalProducts);
 
     useEffect(() => {
-        setLimit(LIMITE_INICIAL); // Restablecer el límite cuando cambia la categoría seleccionada
+        setLimit(LIMITE_INICIAL);
     }, [selectedCategory]);
 
     const filteredProducts = selectedCategory
         ? products[selectedCategory] || []
-        : productsList; // Si no se selecciona ninguna categoría, muestra todos los productos
+        : products; // Si no se selecciona ninguna categoría, muestra todos los productos
 
     const handleShowMore = () => {
         // Aumentar el límite cuando se hace clic en "Ver más"
@@ -43,6 +44,19 @@ const Products = () => {
     const handleCategorySelect = (category) => {
         // Utiliza la acción selectCategory para cambiar la categoría seleccionada en el estado de Redux
         dispatch(selectCategory(category));
+    };
+
+    useEffect(() => {
+        fetchAllProducts();
+    }, []);
+
+    const fetchAllProducts = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}/products`);
+            dispatch({ type: 'SET_PRODUCTS', payload: response.data.products });
+        } catch (error) {
+            console.error("Error al obtener productos del servidor:", error);
+        }
     };
 
     return (
@@ -69,22 +83,22 @@ const Products = () => {
                 </button>
             </ContainerSelect>
 
-
             <ProductsContainer>
-                {filteredProducts.slice(0, limit).map((product) => {
+                {filteredProducts && filteredProducts.slice(0, limit).map((product) => {
                     const { id, title, img, price } = product;
                     return (
                         <Card key={id}>
                             <img src={img} alt={title} />
                             <h2>{title}</h2>
                             <span>{formatPrice(price)}</span>
-                            <Button onClick={() => handleAddToCart({ id, title, img, price })}>
+                            <Button onClick={() => handleAddToCart(product)}>
                                 Comprar
                             </Button>
                         </Card>
                     );
                 })}
             </ProductsContainer>
+
             {!selectedCategory && (
                 <div className="button-container">
                     <Submit

@@ -32,6 +32,8 @@ const Navbar = () => {
                     <NavLinkStyled to='/products'>Productos</NavLinkStyled>
                     <NavLinkStyled to='/contact'>Contacto</NavLinkStyled>
                     <NavLinkStyled to='/aboutUs'>Nosotros</NavLinkStyled>
+                    <NavLinkStyled to='/heroCheck'>Mi cuenta</NavLinkStyled>
+
                 </LinksContainer>
                 
                 <CartAndUser>

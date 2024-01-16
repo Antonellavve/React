@@ -23,10 +23,10 @@ export const StyledForm = styled(Form)`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    font-size: 16px;
     gap: 2rem;
     @media (max-width: 768px) {
-        width: 80%;
+        width: 100%;
         flex-direction: column;
         justify-content: center;
     }
@@ -43,7 +43,7 @@ export const StyledForm = styled(Form)`
 
 export const Check1 = styled.div`
     border: 3px solid black;
-    width: 70%;
+    width: 100%;
     padding: 10px;
     text-align: center;
     height: 400px;
@@ -51,7 +51,7 @@ export const Check1 = styled.div`
 
 export const Check2 = styled.div`
     border: 3px solid black;
-    width: 70%;
+    width: 100%;
     padding: 10px;
     text-align: center;
     height: 400px;

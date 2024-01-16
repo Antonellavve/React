@@ -2,15 +2,14 @@ import styled from 'styled-components';
 
 
 export const HeroCheckStyled = styled.div`
+width: 50%;
 display: flex;
-margin: 8rem;
-height: auto;
 text-align: center;
-padding: 4rem;
+padding: 1rem;
 `;
 
 export const HeroContainer = styled.div`
-margin:20px;
+margin-top: 10rem;
 h1 {
     margin-bottom: 3rem;
   }

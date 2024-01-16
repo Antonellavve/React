@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const ContainerCheckout= styled.div`
     display: flex;
-    width: 1200px;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 8rem;
+    margin-top: 8rem;
 
-    @media (max-width: 768px) {
-        flex-direction: row;
+    @media (max-width: 900px) and (min-width: 320px) {
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     };

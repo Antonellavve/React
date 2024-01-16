@@ -74,7 +74,7 @@ import {
                         </IconCash>
                         
                         <Input name="name" type="number" required>
-                            Numero de tarjeta*</Input>
+                            Número de tarjeta*</Input>
                         <Input name="date" type="number" required>
                             Vencimiento*</Input>
                         <Input name="name cash" type="text" required>
