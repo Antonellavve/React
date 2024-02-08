@@ -6,7 +6,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 4.5rem; /* Ajusta la distancia desde la parte superior */
+  margin-top: 70%; /* Ajusta la distancia desde la parte superior */
   min-height: 70vh; /* Altura mínima del contenedor */
 `;
 
@@ -19,4 +19,5 @@ export const Form = styled(FormikForm)`
 
 
 export const LoginEmail = styled.p`
+margin: 0;
 `;

@@ -8,38 +8,51 @@ export const ContainerDatos = styled.div`
 `;
 
 
-export const DataUser = styled.div`
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+export const Datos = styled.div`
 
-  li {
-    margin-bottom: 20px; /* Ajusta según sea necesario */
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  h3 {
-    margin: 0;
-  }
 `;
+
+export const DataUser = styled.div`
+`;
+
+export const DatosEdit =styled.div`
+  button{
+      margin: 1rem;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      color: black;
+      background-color: #bfff00;
+      padding: 8px 16px;
+      border-radius: 5px;
+      display: inline-block;
+      font-weight: bold;
+      cursor: pointer;
+  }`
+    
 
 export const EditButton = styled.div`
   margin-top: 10px;
 
-  a {
+  button{
+    margin-bottom: 3rem;
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
+    color: black;
+    background-color: #bfff00;
     padding: 8px 16px;
     border-radius: 5px;
     display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
   }
 `;
 
 export const EditableField = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+input{
+  width: 30%;
+  height: 20px;
+  border-radius: 5px;
+}
 `

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Formik, Form } from 'formik';
 
 export const CheckoutDatosStyled = styled.div`
-    width: 100%;
+    width: 80%;
     margin-top: 40px;
     justify-content: center;
     text-align: center;
@@ -16,6 +16,7 @@ export const StyledFormik = styled(Formik)`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: center; /* Centra el contenido verticalmente */
 `;
 
 export const StyledForm = styled(Form)`
@@ -25,6 +26,7 @@ export const StyledForm = styled(Form)`
     justify-content: center;
     font-size: 16px;
     gap: 2rem;
+
     @media (max-width: 768px) {
         width: 100%;
         flex-direction: column;
@@ -33,11 +35,10 @@ export const StyledForm = styled(Form)`
 
     h2 {
         background-color: black;
-        font-size: 25px;
+        font-size: 22px;
         color: white;
         padding: 10px;
-        margin-bottom: 20px;
-        align-items: center;
+        margin-bottom: 10px;
     }
 `;
 
@@ -46,7 +47,11 @@ export const Check1 = styled.div`
     width: 100%;
     padding: 10px;
     text-align: center;
-    height: 400px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 `;
 
 export const Check2 = styled.div`
@@ -54,7 +59,11 @@ export const Check2 = styled.div`
     width: 100%;
     padding: 10px;
     text-align: center;
-    height: 400px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 `;
 
 export const IconCash = styled.div`

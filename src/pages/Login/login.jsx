@@ -41,6 +41,7 @@ const Login = () => {
           <Link to="/register">
             <LoginEmail>¿No tienes cuenta? Regístrate</LoginEmail>
           </Link>
+          <p>¿Olvidaste tu contraseña?</p>
           
           <Submit >Ingresar</Submit>
         </Form>

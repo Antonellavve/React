@@ -12,7 +12,9 @@ import Login from '../pages/Login/login';
 import Hero from '../pages/HeroCheck/HeroCheck';
 import ValidateUser from '../pages/ValidateUser/ValidateUser';
 import DatosPersonales from '../components/DatosPersonales/DatosPersonales';
-import PageProducts from '../pages/Products/PageProducts'
+import MisOrdenes from '../pages/Orders/Orders';
+import ResumenOrder from '../pages/ResumenOrder/Resumen'
+// import PageProducts from '../pages/Products/PageProducts'
 
 function Routes() {
   return (
@@ -30,7 +32,9 @@ function Routes() {
           <Route path='/heroCheck' element={<Hero />} />
           <Route path='/validate' element={<ValidateUser />} />
           <Route path="/datosPersonales" element={<DatosPersonales />} />
-          <Route path="/productsAdd" element={<PageProducts />} />
+          <Route path='/orders' element={<MisOrdenes />} />
+          <Route path='/resumen/:orderId' element={<ResumenOrder />} />
+          {/* <Route path="/productsAdd" element={<PageProducts />} /> */}
 
           {/* La ruta 404 debe ir al final */}
           <Route path='*' element={<h2>ERROR!</h2>} />

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TabContainer = styled.div`
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   justify-content: center;
 `;
 

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
 import Tabs from '../../components/UI/Tab/Tabs'; 
-import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; // Ajusta la ruta según tu estructura
+import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; 
 import {  HeroCheckStyled, HeroContainer } from './HeroCheckStyles';
 import LogoutContent from '../../components/Logout/Logout';
 import Questions from '../../components/Questions/Questions';
@@ -31,7 +31,7 @@ const Hero = () => {
             
             tabs={[
               { id: 'account', label: 'MI CUENTA' },
-              { id: 'order', label: 'MI PEDIDO' },
+              { id: 'order', label: 'MIS ORDENES' },
               { id: 'questions', label: 'PREGUNTAS FRECUENTES' },
               { id: 'logout', label: 'CERRAR SESIÓN' },
             ]}
@@ -40,7 +40,7 @@ const Hero = () => {
           />
           
             {activeTab === 'order' && (
-                navigate("/checkout")
+                navigate("/orders")
             )}
             {activeTab === 'account' && (
               <div>
@@ -57,6 +57,7 @@ const Hero = () => {
                 <LogoutContent/>
               </div>
             )}
+            <br />
             <motion.div whileTap ={{scale:0.97}}>
               {currentUser?.rolAdmin===ADMIN?(
                 <Link to='/productsAdd'>Crear Producto</Link>
@@ -64,6 +65,9 @@ const Hero = () => {
                 <span>No puedes crear productos</span>
               )}
             </motion.div>
+            <br />
+            <br />
+            <br />
           
         </HeroContainer>
       ) : (

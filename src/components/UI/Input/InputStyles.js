@@ -8,9 +8,8 @@ export const InputBox = styled.div`
     padding: 0.5rem 1rem;
     color: white;
     width: 100%; /* Ajusta el ancho según tus necesidades */
-    margin-top: 0.5rem; /* Ajusta el margen superior según tus necesidades */
     display: flex;
-    margin: 1rem 0;
+    margin: 1.5rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,7 +18,7 @@ export const InputBox = styled.div`
 export const InputLabel = styled.label`
     display: flex;
     margin:  0; /* Agrega un pequeño margen superior e inferior */
-    width: 50%; /* Ajusta el ancho según tus necesidades */
+    width: 80%; /* Ajusta el ancho según tus necesidades */
     text-align: right; /* Alinea el texto a la derecha para que esté junto al campo de entrada */
 `;
 

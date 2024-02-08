@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ContainerDatos, DataUser, EditButton, EditableField } from './DatosPersonalesStyles';
+import { ContainerDatos, Datos, DataUser, EditButton, EditableField, DatosEdit } from './DatosPersonalesStyles';
 import { useSelector, useDispatch  } from 'react-redux';
 import { updateUserData } from '../../Redux/User/userSlice';
 
 const DatosPersonales = () => {
+  const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const [isEditing, setIsEditing] = useState(false);
   const [editedData, setEditedData] = useState({
@@ -15,8 +16,11 @@ const DatosPersonales = () => {
   };
 
   const handleSave = () => {
+    // Dispatch the action to update user data
     dispatch(updateUserData(editedData));
-    setIsEditing(true);
+  
+    // Set isEditing to false after saving the data
+    setIsEditing(false);
   };
 
   const handleCancelEdit = () => {
@@ -24,7 +28,8 @@ const DatosPersonales = () => {
       name: currentUser?.name || '',
       email: currentUser?.email || '',
     });
-
+  
+    // Set isEditing to false when canceling the edit
     setIsEditing(false);
   };
 
@@ -37,7 +42,7 @@ const DatosPersonales = () => {
     <ContainerDatos>
       <h2>Mis Datos</h2>
       {isEditing ? (
-        <div>
+        <DatosEdit>
           <EditableField>
             <label>Nombre:</label>
             <input
@@ -46,23 +51,38 @@ const DatosPersonales = () => {
               value={editedData.name}
               onChange={handleInputChange}
             />
+            <label>Apellido:</label>
+            <input
+              type="text"
+              name="apellido"
+              value={editedData.apellido}
+              onChange={handleInputChange}
+            />
+            <label>Dirección:</label>
+            <input
+              type="text"
+              name="adress"
+              value={editedData.adress}
+              onChange={handleInputChange}
+            />
           </EditableField>
 
           <button onClick={handleSave}>Guardar</button>
           <button onClick={handleCancelEdit}>Cancelar</button>
-        </div>
+        </DatosEdit>
       ) : (
-        <div>
-          <p>Modifica tus datos personales a continuación para que tu cuenta esté actualizada.</p>
-          <h2>Detalles</h2>
+        <Datos>
+          <p>Modifica tus datos personales para que tu cuenta este actualizada</p>
           <DataUser>
             <h4>Nombre: {currentUser?.name}</h4>
+            <h4>Apellido: {editedData.apellido}</h4>
             <h4>Correo Electrónico: {currentUser?.email}</h4>
+            <h4>Dirección: {editedData.adress}</h4>
           </DataUser>
           <EditButton>
             <button onClick={handleEditClick}>Editar</button>
           </EditButton>
-        </div>
+        </Datos>
       )}
     </ContainerDatos>
   );

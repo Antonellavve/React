@@ -11,7 +11,7 @@ align-items: center;
 font-size:20px;
 color: #C0C0C0;
 background-color: #1C1C1C;
-margin-top: 45px;
+margin-top: 55px;
 
     span{
         font-size: 22px;

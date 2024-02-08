@@ -1,54 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { totalProducts, Products } from "../../data/products";
 
 const INITIAL_STATE = {
-  products: null,
-  totalProducts: 0,
-  orderBy: "price",
-  ascendent: false,
-  isLoading: true,
-  error: false
+    products: Products, 
+    totalProducts: totalProducts
 };
 
-const productsSlice = createSlice({
-  name: "products",
-  initialState: INITIAL_STATE,
-  reducers: {
-
-    createProducts: (state) => {
-      return state.products;
+export const productsSlice = createSlice({
+    name: "products",
+    initialState: INITIAL_STATE,
+    reducers: {
+        getProducts: (state) => {
+            return state;
+        },
     },
-    getProducts: (state) => {
-      return state.products;
-    },
-    orderProducts: (state, action) => {
-      state.products = productsSort([...state.products], ...action.payload);
-    },
-    successFetchingProducts: (state, action) => {
-      state.isLoading = false;
-      state.error = false;
-      state.products = [...action.payload];
-    },
-    errorFetchingProducts: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-    setProducts: (state, action) => {
-      state.products = action.payload;
-    },
-  }
 });
 
-// Exportando las acciones, incluyendo la nueva
-export const {
-  addNewProduct,
-  createProducts,
-  getProducts,
-  orderProducts,
-  fetchingProducts,
-  successFetchingProducts,
-  errorFetchingProducts,
-  setProducts
-} = productsSlice.actions;
+export const { getProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;
-

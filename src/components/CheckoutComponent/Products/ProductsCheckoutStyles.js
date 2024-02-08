@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProductosContainerStyled = styled.div`
-    width: 100%;
+    width: 50%;
     text-align: center;
     justify-content: center;
     align-items: center;

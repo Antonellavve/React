@@ -2,32 +2,35 @@ import styled from 'styled-components';
 
 
 export const HeroCheckStyled = styled.div`
-width: 50%;
+width: auto;
+max-height: 80vh;
 display: flex;
 text-align: center;
-padding: 1rem;
+align-items: center;
+justify-content: center;
+margin-top: 7rem;
+
 `;
 
 export const HeroContainer = styled.div`
-margin-top: 10rem;
+margin-top: 7rem;
+
 h1 {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
   }
 
   a {
     text-decoration: none;
-    color: blue;
     background: #bfff00;
     color: black;
     justify-content: center;
-    gap: 20px;
-    margin-top: 3rem;
+    margin-bottom: 15%;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     font-weight: bold;
     
     &:hover {
-      /* Styles for hover state */
       color: white;
     }
   }

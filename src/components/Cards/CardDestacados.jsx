@@ -13,10 +13,10 @@ const CardDestacados = ({img, title, price, id}) => {
             <h3>{title}</h3>
             <span>${price}</span>
             <Button onClick={() => dispatch(addToCart({title, img, price, id}))}>
-                Comprar
+                Agregar
             </Button> 
         </CardProducts>
-        
+
     )
 }
 
