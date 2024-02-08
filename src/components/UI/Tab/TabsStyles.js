@@ -15,6 +15,8 @@ export const TabButton = styled.button`
   border-radius: 5px;
   margin-right: 20px;
   background-color: gray;
+  font-size: 15px;
+  font-weight: bold;
   &.active{
     text-decoration: underline;
   }

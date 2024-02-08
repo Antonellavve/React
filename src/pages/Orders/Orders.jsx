@@ -33,6 +33,7 @@ const MisOrdenes = () => {
         <>
             <OrdenesContainerStyled>
                 <OrdenesTitle>Mis órdenes</OrdenesTitle>
+                <br />
                 <MisOrders />
                 <BtnOrdenes>
                     <Button onClick={() => navigate("/")}>Volver a comprar</Button>

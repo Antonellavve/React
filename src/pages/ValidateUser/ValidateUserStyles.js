@@ -6,8 +6,15 @@ export const ContainerValidate = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 10rem;
+  margin-top: 6rem;
+  min-height: 70vh;
+  h1{
+    font-size: 45px;
+    margin: 4rem;
+  }
+  p{
+  font-size: 20px;
+  }
 `;
 
 export const Form = styled(FormikForm)`
@@ -15,6 +22,5 @@ export const Form = styled(FormikForm)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
-  gap: 20px;
+
 `;

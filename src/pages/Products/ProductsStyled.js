@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Form as FormikForm } from 'formik';
 
 export const ProductsSection = styled.section`
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -13,10 +14,10 @@ export const Title = styled.h2 `
 text-align: center;
 justify-content: center;
 align-items: center;
-margin-top: 9rem;
+margin-top: 20%;
 
 @media (max-width: 992px) {
-    margin-top: 25%
+    margin-top: 30%
 }
 
 @media (max-width: 546px) {

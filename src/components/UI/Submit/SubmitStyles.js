@@ -8,10 +8,13 @@ export const ButtonSubmitStyled = styled(motion.button)`
     border-radius: 10px;
     background: #bff000;
     color: black;
+    font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     margin: 20px;
+    width: auto;
+
     &:hover {
         color: white;
     }

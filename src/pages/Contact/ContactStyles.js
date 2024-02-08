@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 export const ContactTitle = styled.div`
+display: flex;
+flex-direction: column;
 text-align: center;
 color: aliceblue;
-margin-top: 8rem;
+margin-top: 15%;
+gap: 20%;
+
 `;
 
 export const ContainerContact = styled.section`

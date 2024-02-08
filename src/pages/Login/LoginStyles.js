@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 70%; /* Ajusta la distancia desde la parte superior */
-  min-height: 70vh; /* Altura mínima del contenedor */
+  min-height: 50vh; /* Altura mínima del contenedor */
 `;
 
 export const Form = styled(FormikForm)`

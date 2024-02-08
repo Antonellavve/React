@@ -146,9 +146,10 @@ const ModalCart = () => {
             zIndex: 1000,
           },
           content: {
-            width: '50%',
+            width: '60%',
             height: '28%',
             margin: 'auto',
+            padding: '40px',
             zIndex: 1001,
             borderRadius: '10px',
             color: 'black',

@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 gap: 20px;
-margin: 0 3rem;
+margin-top: 4rem;
 
 h1{
     font-size: 30px;
@@ -19,7 +19,7 @@ display: flex;
 flex-direction: row;
 font-size: 18px;
 gap: 10px;
-width: 100%;
+width: 90%;
 align-items: center;
 margin-left: 10%;
 

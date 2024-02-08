@@ -48,7 +48,7 @@ const ValidateUser = () => {
       >
         <Form>
           <LoginInput name='code' type='code' placeholder='Código de validación' />
-          <Submit>Validar</Submit>
+          <Submit>Validar Usuario</Submit>
         </Form>
       </Formik>
     </ContainerValidate>

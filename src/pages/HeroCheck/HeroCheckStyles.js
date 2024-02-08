@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 export const HeroCheckStyled = styled.div`
 width: auto;
-max-height: 80vh;
+min-height: 55vh;
 display: flex;
 text-align: center;
 align-items: center;
 justify-content: center;
 margin-top: 7rem;
-
 `;
 
 export const HeroContainer = styled.div`
@@ -35,6 +34,19 @@ h1 {
     }
   }
 `;
+
+export const HeroValidate = styled.div`
+display: flex;
+flex-direction: column;
+gap: 20px;
+h1{
+  font-size: 45px;
+  margin-top: 5rem;
+}
+p{
+  font-size: 20px;
+}
+`
 
 
 

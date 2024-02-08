@@ -8,7 +8,7 @@ export const ContainerOfRegister = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 80%;
-  min-height: 70vh;
+  min-height: 50vh;
 `;
 
 export const Form = styled(FormikForm)`
