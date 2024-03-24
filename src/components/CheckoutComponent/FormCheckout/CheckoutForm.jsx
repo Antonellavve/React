@@ -17,6 +17,7 @@ import {
     Check1,
     Check2,
 } from "./CheckoutFormStyles";
+import Loader from "../../UI/Loader/Loader";
 
 
 const FormOfCheckout = ({ cartItems, shippingCost, price }) => {
@@ -30,7 +31,7 @@ const FormOfCheckout = ({ cartItems, shippingCost, price }) => {
             <StyledFormik
                 initialValues={checkoutValues}
                 validationSchema={checkoutValidation}
-                onSubmit={async (values, { setSubmitting }) => {
+                onSubmit={async (values) => {
                     const orderData = {
                         items: cartItems,
                         price,
@@ -44,9 +45,7 @@ const FormOfCheckout = ({ cartItems, shippingCost, price }) => {
                         dispatch(clearCart());
                     } catch (error) {
                         alert("Error al crear la orden");
-                    } finally {
-                        setSubmitting(false);
-                    }
+                    } 
                 }}
             >
                 {({ isSubmitting }) => (
@@ -73,23 +72,27 @@ const FormOfCheckout = ({ cartItems, shippingCost, price }) => {
                         <SiMercadopago style={{ fontSize: '30px', marginRight: '8px' }} />
                     </IconCash>
                     
-                    <Input name="name" type="number" required>
+                    <Input name="number_cash" type="number" required>
                         Número de tarjeta*</Input>
-                    <Input name="date" type="number" required>
+                    <Input name="date" type="text" pattern="(0[1-9]|1[0-2])\/[0-9]{4}" placeholder="MM/YYYY" required>
                         Vencimiento*</Input>
-                    <Input name="name cash" type="text" required>
+                    <Input name="name_cash" type="text" required>
                         Titular de la tarjeta*</Input>
-                    <Input name="numero" type="number" required>
+                    <Input name="code" type="code" required>
                         CVV*</Input>
             </Check2>
+        
+
+        <div>
+            <Submit disabled={!cartItems.length}>
+                {isSubmitting ? <Loader /> : "Iniciar Pedido"}        
+            </Submit>
+        </div>
         </StyledForm>
-        )}
+        )
+    }
     </StyledFormik>
-        <Submit disabled={!cartItems.length}>
-                    Finalizar la compra
-        </Submit>
-    
-    </CheckoutDatosStyled>
+</CheckoutDatosStyled>
 );
 };
 

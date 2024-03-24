@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/UI/Button/Button';
 import Tabs from '../../components/UI/Tab/Tabs'; 
 import DatosPersonales from '../../components/DatosPersonales/DatosPersonales'; 
+import Questions from "../../components/Questions/Questions"
 import {  HeroCheckStyled, HeroContainer, HeroValidate } from './HeroCheckStyles';
 import LogoutContent from '../../components/Logout/Logout';
-import Questions from '../../components/Questions/Questions';
 import { motion } from 'framer-motion';
 import { ADMIN } from '../../utils/limitProducts';
 
@@ -65,10 +65,10 @@ const Hero = () => {
               </div>
             )}
             <br />
-            <motion.div whileTap ={{scale:0.97}}>
-              {currentUser?.rolAdmin===ADMIN?(
+            <motion.div whileTap={{ scale: 0.97 }}>
+              {currentUser?.rolAdmin === ADMIN ? (
                 <Link to='/productsAdd'>Crear Producto</Link>
-              ):(
+              ) : (
                 <span>No puedes crear productos</span>
               )}
             </motion.div>

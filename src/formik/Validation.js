@@ -53,4 +53,10 @@ export const ProductsValidationSchema = Yup.object({
   price: Yup.number().required('Campo Requerido'),
   id: Yup.number().required('Campo Requerido'),
   stock: Yup.number().required('Campo Requerido'),
+  date: Yup.string()
+    .required('Campo Requerido')
+    .test('is-date', 'Formato de fecha inválido', (value) => {
+      const dateRegex = /^\d{4}-\d{2}$/; // Expresión regular para validar el formato AAAA-MM
+      return dateRegex.test(value);
+    }),
 });

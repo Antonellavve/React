@@ -20,18 +20,12 @@ h1 {
   }
 
   a {
-    text-decoration: none;
-    background: #bfff00;
-    color: black;
+    text-decoration: underline;
     justify-content: center;
     margin-bottom: 15%;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     font-weight: bold;
-    
-    &:hover {
-      color: white;
-    }
   }
 `;
 

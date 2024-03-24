@@ -73,3 +73,4 @@ export const IconCash = styled.div`
     margin-top: 20px;
     gap: 10px;
 `;
+

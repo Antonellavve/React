@@ -36,7 +36,7 @@ const MisOrdenes = () => {
                 <br />
                 <MisOrders />
                 <BtnOrdenes>
-                    <Button onClick={() => navigate("/")}>Volver a comprar</Button>
+                    <Button onClick={() => navigate("/")}>Seguir comprando</Button>
                 </BtnOrdenes>
             </OrdenesContainerStyled>
             <MisOrdenesPatternStyled />

@@ -30,11 +30,15 @@ const orders = useSelector(state => state.orders.orders)
 const {currentUser} = useSelector(state => state.user)
 
 useEffect(() => {
-if(!orders) {
-    getOrders(dispatch, currentUser)
-}
-setVisitedOrder(orders?.find(order => order._id === orderId))
-}, [orderId, currentUser, orders, dispatch])
+    const fetchOrders = async () => {
+        if (!orders) {
+            await getOrders(dispatch, currentUser);
+        }
+        setVisitedOrder(orders?.find(order => order._id === orderId));
+    };
+
+    fetchOrders();
+}, [orderId, currentUser, orders, dispatch]);
 
     return (
         <ResumenContainerStyled>

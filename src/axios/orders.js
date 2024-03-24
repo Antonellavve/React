@@ -21,7 +21,7 @@ export const getOrders = async (dispatch, currentUser) => {
         console.log(orders);
 
         if (orders) {
-            dispatch(fetchOrdersSuccess(orders.data));
+            dispatch(fetchOrdersSuccess(orders.data.data));
         }
     } catch (error) {
         console.log(error);
@@ -40,10 +40,10 @@ export const createOrder = async (order, dispatch, currentUser) => {
         });
     
         if (response) {
-            await getOrders(dispatch, currentUser);
+            getOrders(dispatch, currentUser);
         }
         } catch (error) {
-        console.error("Error al crear la orden:", error);
+        console.error( error);
         dispatch(createOrderFail());
         }
     };
