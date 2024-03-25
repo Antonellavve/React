@@ -17,7 +17,7 @@ return (
                 San Luis, y con todas las ganas de abrir mas locales en el resto del país. Actualmente dejamos nuestras profesiones
                 para dedicarnos enteramente en este proyecto, apostando por ese deseo personal.
 
-                Akika esta pensado para mujeres atrevidas, que se animan a darlo todo, que quieren mostrar lo mejor de si. Nos inspiramos 
+                Akika esta pensado para mujeres, que se animan a darlo todo, que quieren mostrar lo mejor de si. Nos inspiramos 
                 en prendas de la actualidad con un toque vintage, envuelto en un arte contemporáneo y con la moda innovadora. Creación, orgullo y
                 resiliencia, a nosotras nos representa, y queremos llevar esa ideologia a todas las mujeres del mundo.
 
